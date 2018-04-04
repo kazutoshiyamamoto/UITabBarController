@@ -10,10 +10,14 @@ import UIKit
 
 class ThirdViewController: UIViewController {
 
+    @IBOutlet weak var Label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        Label.textColor = UIColor.red
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +35,9 @@ class ThirdViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
+
+
+    
 }
