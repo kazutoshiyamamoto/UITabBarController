@@ -17,7 +17,7 @@ class ThirdViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        Label.textColor = UIColor.red
+        Label.textColor = UIColor.yellow
     }
 
     override func didReceiveMemoryWarning() {
