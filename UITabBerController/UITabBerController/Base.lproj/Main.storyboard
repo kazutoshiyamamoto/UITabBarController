@@ -109,6 +109,9 @@
                         <viewLayoutGuide key="safeArea" id="s2A-uJ-jU3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ZRQ-0e-hu2"/>
+                    <connections>
+                        <outlet property="Label" destination="QNU-mh-i6Z" id="UXv-SN-U9e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghS-pS-DKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
