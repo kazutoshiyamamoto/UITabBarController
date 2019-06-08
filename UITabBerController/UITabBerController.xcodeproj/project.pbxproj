@@ -13,9 +13,10 @@
 		FD96C3CF206F24AF0013BF37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD96C3CD206F24AF0013BF37 /* Main.storyboard */; };
 		FD96C3D1206F24AF0013BF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD96C3D0206F24AF0013BF37 /* Assets.xcassets */; };
 		FD96C3D4206F24AF0013BF37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD96C3D2206F24AF0013BF37 /* LaunchScreen.storyboard */; };
-		FD9C74B522A387B700F58E5C /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C74B422A387B700F58E5C /* CollectionViewHeader.swift */; };
 		FD9C74B822A387DA00F58E5C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C74B622A387DA00F58E5C /* CollectionViewCell.swift */; };
 		FD9C74B922A387DA00F58E5C /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD9C74B722A387DA00F58E5C /* CollectionViewCell.xib */; };
+		FD9C74C422ABC45F00F58E5C /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C74C222ABC45F00F58E5C /* CollectionViewHeader.swift */; };
+		FD9C74C522ABC45F00F58E5C /* CollectionViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD9C74C322ABC45F00F58E5C /* CollectionViewHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +28,10 @@
 		FD96C3D0206F24AF0013BF37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD96C3D3206F24AF0013BF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD96C3D5206F24AF0013BF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD9C74B422A387B700F58E5C /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
 		FD9C74B622A387DA00F58E5C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FD9C74B722A387DA00F58E5C /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		FD9C74C222ABC45F00F58E5C /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
+		FD9C74C322ABC45F00F58E5C /* CollectionViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewHeader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,8 @@
 			children = (
 				FD96C3C7206F24AF0013BF37 /* AppDelegate.swift */,
 				FD96C3C9206F24AF0013BF37 /* CollectionViewController.swift */,
-				FD9C74B422A387B700F58E5C /* CollectionViewHeader.swift */,
+				FD9C74C222ABC45F00F58E5C /* CollectionViewHeader.swift */,
+				FD9C74C322ABC45F00F58E5C /* CollectionViewHeader.xib */,
 				FD9C74B622A387DA00F58E5C /* CollectionViewCell.swift */,
 				FD9C74B722A387DA00F58E5C /* CollectionViewCell.xib */,
 				FD96C3CB206F24AF0013BF37 /* SecondViewController.swift */,
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD9C74C522ABC45F00F58E5C /* CollectionViewHeader.xib in Resources */,
 				FD96C3D4206F24AF0013BF37 /* LaunchScreen.storyboard in Resources */,
 				FD96C3D1206F24AF0013BF37 /* Assets.xcassets in Resources */,
 				FD9C74B922A387DA00F58E5C /* CollectionViewCell.xib in Resources */,
@@ -150,8 +154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9C74B822A387DA00F58E5C /* CollectionViewCell.swift in Sources */,
+				FD9C74C422ABC45F00F58E5C /* CollectionViewHeader.swift in Sources */,
 				FD96C3CC206F24AF0013BF37 /* SecondViewController.swift in Sources */,
-				FD9C74B522A387B700F58E5C /* CollectionViewHeader.swift in Sources */,
 				FD96C3C8206F24AF0013BF37 /* AppDelegate.swift in Sources */,
 				FD96C3CA206F24AF0013BF37 /* CollectionViewController.swift in Sources */,
 			);
