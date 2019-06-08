@@ -24,7 +24,7 @@ class FirstViewController: UIViewController {
         scrollView.contentSize = CGSize(width: self.view.frame.width * 3, height: self.scrollView.frame.height)
         
         collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
-        collectionView.register(UINib(nibName: "CollectionViewHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")
+        collectionView.register(UINib(nibName: "CollectionViewHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -49,7 +49,7 @@ class FirstViewController: UIViewController {
             button.frame = CGRect(origin: CGPoint(x: self.view.frame.size.width * CGFloat(i), y: 0), size: CGSize(width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
             button.tag += i
             button.imageView?.contentMode = .scaleAspectFit
-            button.addTarget(self, action: #selector(transitionDetail), for: UIControlEvents.touchUpInside)
+            button.addTarget(self, action: #selector(transitionDetail), for: UIControl.Event.touchUpInside)
             self.scrollView.addSubview(button)
             buttons.append(button)
         }
@@ -151,7 +151,7 @@ extension FirstViewController: UICollectionViewDataSource {
     
     // ヘッダーの設定
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let collectionViewHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! CollectionViewHeader
+        let collectionViewHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! CollectionViewHeader
         let headerText = sectionName[indexPath.section][indexPath.item]
         collectionViewHeader.setUpContents(titleText: headerText)
         return collectionViewHeader
