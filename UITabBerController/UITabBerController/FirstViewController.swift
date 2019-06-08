@@ -42,8 +42,6 @@ class FirstViewController: UIViewController {
     }
     
     private func setUpAdButtons() {
-        self.scrollView.layoutIfNeeded()
-        
         for i in 0 ..< 3 {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
             button.frame = CGRect(origin: CGPoint(x: self.view.frame.size.width * CGFloat(i), y: 0), size: CGSize(width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
@@ -63,9 +61,7 @@ class FirstViewController: UIViewController {
                 let configuration = URLSessionConfiguration.default
                 configuration.requestCachePolicy = .returnCacheDataElseLoad
                 let session = URLSession(configuration: configuration)
-                let task = session.dataTask(with: url) { [weak self] (data, response, error) in
-                    guard let weakSelf = self else { return }
-                    
+                let task = session.dataTask(with: url) { (data, response, error) in
                     session.invalidateAndCancel()
                     
                     if let error = error {
@@ -80,7 +76,7 @@ class FirstViewController: UIViewController {
                     if response.statusCode == 200 {
                         DispatchQueue.main.async {
                             let image = UIImage(data: data)
-                            weakSelf.buttons[i].setImage(image, for: .normal)
+                            self.buttons[i].setImage(image, for: .normal)
                         }
                     } else {
                         print(response.statusCode)
