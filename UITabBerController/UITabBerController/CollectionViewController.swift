@@ -32,8 +32,33 @@ class CollectionViewController: UIViewController {
 
 extension CollectionViewController: UICollectionViewDelegate {
     // セル選択時の処理
+    // TODO:default消すとエラーになる現象の解消
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(data[indexPath.section][indexPath.row])
+        switch (indexPath.section, indexPath.row) {
+        case (CollectionViewCellType.First.rawValue, CollectionViewCellType.FirstItems.First.rawValue):
+            print(data[indexPath.section][indexPath.row])
+        case (CollectionViewCellType.First.rawValue, CollectionViewCellType.FirstItems.Second.rawValue):
+            print(data[indexPath.section][indexPath.row])
+        case (CollectionViewCellType.First.rawValue, CollectionViewCellType.FirstItems.Third.rawValue):
+            print(data[indexPath.section][indexPath.row])
+            
+        case (CollectionViewCellType.Second.rawValue, CollectionViewCellType.SecondItems.First.rawValue):
+            print(data[indexPath.section][indexPath.row])
+        case (CollectionViewCellType.Second.rawValue, CollectionViewCellType.SecondItems.Second.rawValue):
+            print(data[indexPath.section][indexPath.row])
+        case (CollectionViewCellType.Second.rawValue, CollectionViewCellType.SecondItems.Third.rawValue):
+            print(data[indexPath.section][indexPath.row])
+            
+        case (CollectionViewCellType.Third.rawValue, CollectionViewCellType.ThirdItems.First.rawValue):
+            print(data[indexPath.section][indexPath.row])
+        case (CollectionViewCellType.Third.rawValue, CollectionViewCellType.ThirdItems.Second.rawValue):
+            print(data[indexPath.section][indexPath.row])
+        case (CollectionViewCellType.Third.rawValue, CollectionViewCellType.ThirdItems.Third.rawValue):
+            print(data[indexPath.section][indexPath.row])
+
+        default:
+            print("テスト")
+        }
     }
 }
 
