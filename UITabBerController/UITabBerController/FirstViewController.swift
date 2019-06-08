@@ -46,7 +46,7 @@ class FirstViewController: UIViewController {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
             button.frame = CGRect(origin: CGPoint(x: self.view.frame.size.width * CGFloat(i), y: 0), size: CGSize(width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
             button.tag += i
-            button.imageView?.contentMode = .scaleAspectFit
+            button.imageView?.contentMode = .scaleAspectFill
             button.addTarget(self, action: #selector(transitionDetail), for: UIControl.Event.touchUpInside)
             self.scrollView.addSubview(button)
             buttons.append(button)
@@ -54,7 +54,7 @@ class FirstViewController: UIViewController {
     }
     
     private func showButtonImages() {
-        let urls = ["https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png", "https://avatars1.githubusercontent.com/u/30766025?s=460&v=4", "https://s.yimg.jp/images/top/sp2/cmn/logo-170307.png"]
+        let urls = ["https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220300.jpg", "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220253.jpg", "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220248.jpg"]
         
         for i in 0 ..< urls.count {
             if let url = URL(string: urls[i]) {
