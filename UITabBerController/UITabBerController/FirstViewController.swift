@@ -11,30 +11,51 @@ import UIKit
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var buttons: [UIButton] = []
+    private var buttons: [UIButton] = []
     
-    let sectionName = [["Section1"], ["Section2"], ["Section3"]]
-    let data = [["item1", "item2", "item3"], ["item4", "item5", "item6"], ["item7", "item8", "item9"]]
-    let photo = [["photo1", "photo2", "photo3"], ["photo4", "photo5", "photo6"], ["photo7", "photo8", "photo9"]]
+    private var offsetX: CGFloat = 0
+    private var timer: Timer!
+    
+    private let sectionName = [["Section1"], ["Section2"], ["Section3"]]
+    private let data = [["item1", "item2", "item3"], ["item4", "item5", "item6"], ["item7", "item8", "item9"]]
+    private let photo = [["photo1", "photo2", "photo3"], ["photo4", "photo5", "photo6"], ["photo7", "photo8", "photo9"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = CGSize(width: self.view.frame.width * 3, height: self.scrollView.frame.height)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width * 3, height: self.scrollView.frame.height)
         
-        collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
-        collectionView.register(UINib(nibName: "CollectionViewHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
+        self.scrollView.delegate = self
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        self.collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+        self.collectionView.register(UINib(nibName: "CollectionViewHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
+        
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         
         self.setUpAdButtons()
+        
+        // タイマーを作成
+        self.timer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.showButtonImages()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // タイマーを破棄
+        if let workingTimer = self.timer {
+            workingTimer.invalidate()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,7 +70,7 @@ class FirstViewController: UIViewController {
             button.imageView?.contentMode = .scaleAspectFill
             button.addTarget(self, action: #selector(transitionDetail), for: UIControl.Event.touchUpInside)
             self.scrollView.addSubview(button)
-            buttons.append(button)
+            self.buttons.append(button)
         }
     }
     
@@ -87,8 +108,25 @@ class FirstViewController: UIViewController {
         }
     }
     
-    @objc func transitionDetail() {
+    @objc private func transitionDetail() {
         print("ボタンが押された")
+    }
+    
+    // offsetXの値を更新することページを移動
+    @objc private func scrollPage() {
+        // 画面の幅分offsetXを移動
+        self.offsetX += self.view.frame.size.width
+        // 3ページ目まで移動したら1ページ目まで戻る
+        if self.offsetX < self.view.frame.size.width * 3 {
+            UIView.animate(withDuration: 0.2) {
+                self.scrollView.contentOffset.x = self.offsetX
+            }
+        } else {
+            UIView.animate(withDuration: 0.2) {
+                self.offsetX = 0
+                self.scrollView.contentOffset.x = self.offsetX
+            }
+        }
     }
 }
 
@@ -151,6 +189,15 @@ extension FirstViewController: UICollectionViewDataSource {
         let headerText = sectionName[indexPath.section][indexPath.item]
         collectionViewHeader.setUpContents(titleText: headerText)
         return collectionViewHeader
+    }
+}
+
+extension FirstViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // scrollViewのページ移動に合わせてpageControlの表示も移動
+        self.pageControl.currentPage = Int(self.scrollView.contentOffset.x / self.scrollView.frame.size.width)
+        // offsetXの値を更新
+        self.offsetX = self.scrollView.contentOffset.x
     }
 }
 
