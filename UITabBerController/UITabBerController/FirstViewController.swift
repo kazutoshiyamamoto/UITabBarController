@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController {
+class FirstViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -61,8 +61,7 @@ class CollectionViewController: UIViewController {
         for i in 0 ..< urls.count {
             if let url = URL(string: urls[i]) {
                 let configuration = URLSessionConfiguration.default
-                configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
-                configuration.urlCache = nil
+                configuration.requestCachePolicy = .returnCacheDataElseLoad
                 let session = URLSession(configuration: configuration)
                 let task = session.dataTask(with: url) { [weak self] (data, response, error) in
                     guard let weakSelf = self else { return }
@@ -97,7 +96,7 @@ class CollectionViewController: UIViewController {
     }
 }
 
-extension CollectionViewController: UICollectionViewDelegate {
+extension FirstViewController: UICollectionViewDelegate {
     // セル選択時の処理
     // TODO:default消すとエラーになる現象の解消
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -129,7 +128,7 @@ extension CollectionViewController: UICollectionViewDelegate {
     }
 }
 
-extension CollectionViewController: UICollectionViewDataSource {
+extension FirstViewController: UICollectionViewDataSource {
     // セルの数を返す
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.data[section].count
@@ -159,7 +158,7 @@ extension CollectionViewController: UICollectionViewDataSource {
     }
 }
 
-extension CollectionViewController:  UICollectionViewDelegateFlowLayout {
+extension FirstViewController:  UICollectionViewDelegateFlowLayout {
     // セルの大きさ
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 80, height: 80)
