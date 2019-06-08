@@ -158,17 +158,7 @@ extension FirstViewController: UICollectionViewDataSource {
     }
 }
 
-extension FirstViewController:  UICollectionViewDelegateFlowLayout {
-    // セルの大きさ
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: 80)
-    }
-    
-    // セルの余白
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-    }
-    
+extension FirstViewController:  UICollectionViewDelegateFlowLayout {    
     // ヘッダーのサイズ
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height: 50)
