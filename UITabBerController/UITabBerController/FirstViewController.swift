@@ -108,8 +108,23 @@ class FirstViewController: UIViewController {
         }
     }
     
-    @objc private func transitionDetail() {
-        print("ボタンが押された")
+    @objc private func transitionDetail(_ sender: UIButton) {
+        enum ButtonTag: Int {
+            case first = 0
+            case second
+            case third
+        }
+        
+        if let buttonTag = ButtonTag(rawValue: sender.tag) {
+            switch buttonTag {
+            case .first:
+                print("ボタン1")
+            case .second:
+                print("ボタン2")
+            case .third:
+                print("ボタン3")
+            }
+        }
     }
     
     // offsetXの値を更新することページを移動
@@ -155,7 +170,7 @@ extension FirstViewController: UICollectionViewDelegate {
             print(data[indexPath.section][indexPath.row])
         case (CollectionViewCellType.Third.rawValue, CollectionViewCellType.ThirdItems.Third.rawValue):
             print(data[indexPath.section][indexPath.row])
-
+            
         default:
             print("テスト")
         }
