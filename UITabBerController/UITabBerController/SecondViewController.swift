@@ -12,6 +12,10 @@ import UIKit
 let sectionTitle = ["Section1"]
 let section0 = ["item1", "item2", "item3", "item4"]
 
+struct Item: Codable {
+    let title: String
+}
+
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
