@@ -25,7 +25,7 @@ class SecondViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        
+        get(url: "http://localhost/test2.php")
     }
     
     override func didReceiveMemoryWarning() {
