@@ -24,10 +24,32 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func get(url urlString: String, queryItems: [URLQueryItem]? = nil) {
+        var components = URLComponents(string: urlString)
+        components?.queryItems = queryItems
+        let url = components?.url
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data, let response = response {
+                print(response)
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+                    print(json)
+                } catch {
+                    print("Serialize Error")
+                }
+            } else {
+                print(error ?? "Error")
+            }
+        }
+        task.resume()
     }
 }
 
