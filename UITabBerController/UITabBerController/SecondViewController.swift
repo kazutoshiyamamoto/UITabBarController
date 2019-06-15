@@ -13,7 +13,7 @@ let sectionTitle = ["Section1"]
 let section0 = ["item1", "item2", "item3", "item4"]
 
 struct Item: Codable {
-    let title: String
+    var value: Int
 }
 
 class SecondViewController: UIViewController {
@@ -25,7 +25,7 @@ class SecondViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        get(url: "http://localhost/test2.php")
+        self.get(url: "http://localhost/test2.php")
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,11 +37,12 @@ class SecondViewController: UIViewController {
         components?.queryItems = queryItems
         let url = components?.url
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            if let data = data, let response = response {
-                print(response)
+            if let data = data {
+                
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-                    print(json)
+                    let decoder = JSONDecoder()
+                    let value = try decoder.decode(Item.self, from: data)
+                    print(value)
                 } catch {
                     print("Serialize Error")
                 }
