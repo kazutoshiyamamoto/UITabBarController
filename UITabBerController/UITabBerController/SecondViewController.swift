@@ -13,7 +13,7 @@ let sectionTitle = ["Section1"]
 let section0 = ["item1", "item2", "item3", "item4"]
 
 struct Item: Codable {
-    var value: Int
+    var title: String
 }
 
 class SecondViewController: UIViewController {
@@ -41,8 +41,8 @@ class SecondViewController: UIViewController {
                 
                 do {
                     let decoder = JSONDecoder()
-                    let value = try decoder.decode(Item.self, from: data)
-                    print(value)
+                    let title = try decoder.decode([Item].self, from: data)
+                    print(title[0].title)
                 } catch {
                     print("Serialize Error")
                 }
