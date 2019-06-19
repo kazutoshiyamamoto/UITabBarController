@@ -10,7 +10,7 @@ import UIKit
 
 // テーブルビューに表示するデータ
 let sectionTitle = ["Section1"]
-let items: [String] = []
+var items: [String] = []
 
 struct Item: Codable {
     var title: String
@@ -22,8 +22,10 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        self.setUpTableItems()
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,9 +33,14 @@ class SecondViewController: UIViewController {
     }
     
     func setUpTableItems() {
-//        getTableItems(url: "http://localhost/test2.php", completionHandler: )
+        getTableItems(url: "http://localhost/test2.php", completionHandler: { (title) in
+            items.append(title)
+            DispatchQueue.main.async {
+            self.tableView.reloadData()
+            }
+        })
     }
-
+    
     
     func getTableItems(url: String, completionHandler: @escaping (_ title: String) -> ()) {
         if let url = URL(string: url) {
@@ -62,26 +69,26 @@ class SecondViewController: UIViewController {
     }
     
     
-//    func get(url urlString: String, queryItems: [URLQueryItem]? = nil) {
-//        var components = URLComponents(string: urlString)
-//        components?.queryItems = queryItems
-//        let url = components?.url
-//        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-//            if let data = data {
-//
-//                do {
-//                    let decoder = JSONDecoder()
-//                    let title = try decoder.decode([Item].self, from: data)
-//                    print(title[0].title)
-//                } catch {
-//                    print("Serialize Error")
-//                }
-//            } else {
-//                print(error ?? "Error")
-//            }
-//        }
-//        task.resume()
-//    }
+    //    func get(url urlString: String, queryItems: [URLQueryItem]? = nil) {
+    //        var components = URLComponents(string: urlString)
+    //        components?.queryItems = queryItems
+    //        let url = components?.url
+    //        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+    //            if let data = data {
+    //
+    //                do {
+    //                    let decoder = JSONDecoder()
+    //                    let title = try decoder.decode([Item].self, from: data)
+    //                    print(title[0].title)
+    //                } catch {
+    //                    print("Serialize Error")
+    //                }
+    //            } else {
+    //                print(error ?? "Error")
+    //            }
+    //        }
+    //        task.resume()
+    //    }
 }
 
 extension SecondViewController: UITableViewDelegate {
