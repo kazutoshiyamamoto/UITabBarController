@@ -24,30 +24,26 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        self.getTableItems(url: "http://localhost/test2.php")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func get(url: URL, queryItems: [URLQueryItem]? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-//        var components = URLComponents(string: url)
-//        components?.queryItems = queryItems
-//        let url = components?.url
-        URLSession.shared.dataTask(with: url, completionHandler: completionHandler).resume()
+    func setUpTableItems() {
+//        getTableItems(url: "http://localhost/test2.php", completionHandler: )
     }
+
     
-    func getTableItems(url: String, completionHandler: @escaping (_ title: Codable) -> ()) {
+    func getTableItems(url: String, completionHandler: @escaping (_ title: String) -> ()) {
         if let url = URL(string: url) {
             self.get(url: url, queryItems: nil, completionHandler: { data, response, error in
                 if let data = data {
                     
                     do {
                         let decoder = JSONDecoder()
-                        let title = try decoder.decode([Item].self, from: data)
-                        completionHandler(title)
+                        let item = try decoder.decode([Item].self, from: data)
+                        completionHandler(item[0].title)
                     } catch {
                         print("Serialize Error")
                     }
@@ -56,6 +52,13 @@ class SecondViewController: UIViewController {
                 }
             })
         }
+    }
+    
+    func get(url: URL, queryItems: [URLQueryItem]? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        //        var components = URLComponents(string: url)
+        //        components?.queryItems = queryItems
+        //        let url = components?.url
+        URLSession.shared.dataTask(with: url, completionHandler: completionHandler).resume()
     }
     
     
