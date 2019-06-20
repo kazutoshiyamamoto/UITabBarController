@@ -8,15 +8,14 @@
 
 import UIKit
 
-// テーブルビューに表示するデータ
-let sectionTitle = ["Section1"]
-var items: [String] = []
-
 struct Item: Codable {
     var title: String
 }
 
 class SecondViewController: UIViewController {
+    // テーブルビューに表示するデータ
+    let sectionTitle = ["Section1"]
+    var items: [Item] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,25 +31,24 @@ class SecondViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func setUpTableItems() {
-        getTableItems(url: "http://localhost/test2.php", completionHandler: { (title) in
-            items.append(title)
+    private func setUpTableItems() {
+        self.getTableItems(completionHandler: { (items) in
+            self.items = items
             DispatchQueue.main.async {
-            self.tableView.reloadData()
+                self.tableView.reloadData()
             }
         })
     }
     
-    
-    func getTableItems(url: String, completionHandler: @escaping (_ title: String) -> ()) {
-        if let url = URL(string: url) {
+    private func getTableItems(completionHandler: @escaping ([Item]) -> Void) {
+        if let url = URL(string: "http://localhost/test2.php") {
             self.get(url: url, queryItems: nil, completionHandler: { data, response, error in
                 if let data = data {
                     
                     do {
                         let decoder = JSONDecoder()
-                        let item = try decoder.decode([Item].self, from: data)
-                        completionHandler(item[0].title)
+                        let items = try decoder.decode([Item].self, from: data)
+                        completionHandler(items)
                     } catch {
                         print("Serialize Error")
                     }
@@ -61,7 +59,7 @@ class SecondViewController: UIViewController {
         }
     }
     
-    func get(url: URL, queryItems: [URLQueryItem]? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+    private func get(url: URL, queryItems: [URLQueryItem]? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
         //        var components = URLComponents(string: url)
         //        components?.queryItems = queryItems
         //        let url = components?.url
@@ -94,7 +92,7 @@ class SecondViewController: UIViewController {
 extension SecondViewController: UITableViewDelegate {
     // セル選択時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(items[indexPath.row])
+        print(items[indexPath.row].title)
     }
 }
 
@@ -112,7 +110,7 @@ extension SecondViewController: UITableViewDataSource {
     // セル設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = items[indexPath.row]
+        cell.textLabel?.text = items[indexPath.row].title
         return cell
     }
     
