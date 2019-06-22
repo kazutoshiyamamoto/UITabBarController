@@ -49,11 +49,7 @@ class FirstViewController: UIViewController {
         // タイマーを作成
         self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
+        
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // タイマーを破棄
