@@ -19,6 +19,10 @@ class FirstViewController: UIViewController {
     private var offsetX: CGFloat = 0
     private var timer: Timer!
     
+    private let firstButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220300.jpg"
+    private let secondButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220253.jpg"
+    private let thirdButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220248.jpg"
+    
     private let sectionName = [["Section1"], ["Section2"], ["Section3"]]
     private let data = [["item1", "item2", "item3"], ["item4", "item5", "item6"], ["item7", "item8", "item9"]]
     private let photo = [["photo1", "photo2", "photo3"], ["photo4", "photo5", "photo6"], ["photo7", "photo8", "photo9"]]
@@ -38,12 +42,12 @@ class FirstViewController: UIViewController {
         self.setUpAdButtons()
         
         // タイマーを作成
-        self.timer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.showButtonImages()
+        self.setUpButtonImage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,38 +78,51 @@ class FirstViewController: UIViewController {
         }
     }
     
-    private func showButtonImages() {
-        let urls = ["https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220300.jpg", "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220253.jpg", "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220248.jpg"]
+    private func setUpButtonImage() {
+        self.loadButtonImage(url: self.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+            self.buttons[0].setImage(image, for: .normal)
+        })
         
-        for i in 0 ..< urls.count {
-            if let url = URL(string: urls[i]) {
-                let configuration = URLSessionConfiguration.default
-                configuration.requestCachePolicy = .returnCacheDataElseLoad
-                let session = URLSession(configuration: configuration)
-                let task = session.dataTask(with: url) { (data, response, error) in
-                    session.invalidateAndCancel()
-                    
-                    if let error = error {
-                        print(error.localizedDescription)
-                        return
-                    }
-                    
-                    guard let data = data, let response = response as? HTTPURLResponse else {
-                        return
-                    }
-                    
-                    if response.statusCode == 200 {
-                        DispatchQueue.main.async {
-                            let image = UIImage(data: data)
-                            self.buttons[i].setImage(image, for: .normal)
-                        }
-                    } else {
-                        print(response.statusCode)
-                    }
+        self.loadButtonImage(url: self.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+            self.buttons[1].setImage(image, for: .normal)
+        })
+        
+        self.loadButtonImage(url: self.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+            self.buttons[2].setImage(image, for: .normal)
+        })
+    }
+    
+    private func loadButtonImage(url: String, completionHandler: @escaping (_ image: UIImage) -> ()) {
+        let configuration = URLSessionConfiguration.default
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        configuration.urlCache = nil
+        
+        if let url = URL(string: url) {
+            self.getAddConfiguration(url: url, configuration: configuration, completionHandler: {(data, response, error) -> Void in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
                 }
-                task.resume()
+                
+                guard let data = data, let response = response as? HTTPURLResponse else {
+                    return
+                }
+                
+                if response.statusCode == 200 {
+                    DispatchQueue.main.async {
+                        let image = UIImage(data: data)!
+                        completionHandler(image)
+                    }
+                } else {
+                    print(response.statusCode)
+                }
             }
-        }
+            )}
+    }
+    
+    private func getAddConfiguration(url: URL, configuration: URLSessionConfiguration, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let session = URLSession(configuration: configuration)
+        session.dataTask(with: url, completionHandler: completionHandler).resume()
     }
     
     @objc private func transitionDetail(_ sender: UIButton) {
