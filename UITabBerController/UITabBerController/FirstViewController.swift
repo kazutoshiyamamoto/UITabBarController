@@ -40,14 +40,14 @@ class FirstViewController: UIViewController {
         self.collectionView.dataSource = self
         
         self.setUpButtons()
-        
-        // タイマーを作成
-        self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setUpButtonImage()
+        
+        // タイマーを作成
+        self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
