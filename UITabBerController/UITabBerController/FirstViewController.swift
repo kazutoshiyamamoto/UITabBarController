@@ -39,7 +39,7 @@ class FirstViewController: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        self.setUpAdButtons()
+        self.setUpButtons()
         
         // タイマーを作成
         self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
@@ -66,7 +66,7 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    private func setUpAdButtons() {
+    private func setUpButtons() {
         for i in 0 ..< 3 {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
             button.frame = CGRect(origin: CGPoint(x: self.view.frame.size.width * CGFloat(i), y: 0), size: CGSize(width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
