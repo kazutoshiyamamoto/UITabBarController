@@ -51,6 +51,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD07066522C110DC0040F9B1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD96C3D2206F24AF0013BF37 /* LaunchScreen.storyboard */,
+				FD96C3CD206F24AF0013BF37 /* Main.storyboard */,
+				FDB1FBFF22BE5318006C2AFD /* FirstView.storyboard */,
+				FDB1FC0122BE54C3006C2AFD /* SecondView.storyboard */,
+				FD9C74B622A387DA00F58E5C /* CollectionViewCell.swift */,
+				FD9C74B722A387DA00F58E5C /* CollectionViewCell.xib */,
+				FD9C74C222ABC45F00F58E5C /* CollectionViewHeader.swift */,
+				FD9C74C322ABC45F00F58E5C /* CollectionViewHeader.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD1C34D922C111A000C3B8EE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD96C3C9206F24AF0013BF37 /* FirstViewController.swift */,
+				FD96C3CB206F24AF0013BF37 /* SecondViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FD1C34DA22C111C200C3B8EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C74C622ABCBF400F58E5C /* CollectionViewCellType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FD96C3BB206F24AF0013BF37 = {
 			isa = PBXGroup;
 			children = (
@@ -70,19 +102,11 @@
 		FD96C3C6206F24AF0013BF37 /* UITabBerController */ = {
 			isa = PBXGroup;
 			children = (
-				FD96C3D0206F24AF0013BF37 /* Assets.xcassets */,
-				FD96C3D2206F24AF0013BF37 /* LaunchScreen.storyboard */,
-				FD96C3CD206F24AF0013BF37 /* Main.storyboard */,
-				FDB1FBFF22BE5318006C2AFD /* FirstView.storyboard */,
-				FDB1FC0122BE54C3006C2AFD /* SecondView.storyboard */,
 				FD96C3C7206F24AF0013BF37 /* AppDelegate.swift */,
-				FD96C3C9206F24AF0013BF37 /* FirstViewController.swift */,
-				FD9C74C222ABC45F00F58E5C /* CollectionViewHeader.swift */,
-				FD9C74C322ABC45F00F58E5C /* CollectionViewHeader.xib */,
-				FD9C74B622A387DA00F58E5C /* CollectionViewCell.swift */,
-				FD9C74B722A387DA00F58E5C /* CollectionViewCell.xib */,
-				FD9C74C622ABCBF400F58E5C /* CollectionViewCellType.swift */,
-				FD96C3CB206F24AF0013BF37 /* SecondViewController.swift */,
+				FD96C3D0206F24AF0013BF37 /* Assets.xcassets */,
+				FD07066522C110DC0040F9B1 /* Views */,
+				FD1C34D922C111A000C3B8EE /* Controllers */,
+				FD1C34DA22C111C200C3B8EE /* Models */,
 				FD96C3D5206F24AF0013BF37 /* Info.plist */,
 			);
 			path = UITabBerController;
