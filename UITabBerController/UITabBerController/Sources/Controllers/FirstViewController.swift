@@ -75,51 +75,21 @@ class FirstViewController: UIViewController {
     }
     
     private func setUpButtonImage() {
-        self.loadButtonImage(url: self.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        let webApiClient = WebAPIClient()
+        webApiClient.loadButtonImage(url: self.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[0].setImage(image, for: .normal)
         })
         
-        self.loadButtonImage(url: self.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        webApiClient.loadButtonImage(url: self.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[1].setImage(image, for: .normal)
         })
         
-        self.loadButtonImage(url: self.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        webApiClient.loadButtonImage(url: self.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[2].setImage(image, for: .normal)
         })
     }
     
-    private func loadButtonImage(url: String, completionHandler: @escaping (_ image: UIImage) -> ()) {
-        let configuration = URLSessionConfiguration.default
-        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
-        configuration.urlCache = nil
-        
-        if let url = URL(string: url) {
-            self.getAddConfiguration(url: url, configuration: configuration, completionHandler: {(data, response, error) -> Void in
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-                
-                guard let data = data, let response = response as? HTTPURLResponse else {
-                    return
-                }
-                
-                if response.statusCode == 200 {
-                    DispatchQueue.main.async {
-                        let image = UIImage(data: data)!
-                        completionHandler(image)
-                    }
-                } else {
-                    print(response.statusCode)
-                }
-            }
-            )}
-    }
-    
-    private func getAddConfiguration(url: URL, configuration: URLSessionConfiguration, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        let session = URLSession(configuration: configuration)
-        session.dataTask(with: url, completionHandler: completionHandler).resume()
-    }
+
     
     @objc private func transitionDetail(_ sender: UIButton) {
         enum ButtonTag: Int {
