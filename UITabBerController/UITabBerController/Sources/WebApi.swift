@@ -43,7 +43,7 @@ class WebApi {
             )}
     }
     
-    func getTableItems(completionHandler: @escaping ([Item]) -> Void) {
+    func getTableItems(completionHandler: @escaping ([Item]) -> ()) {
         let configuration = URLSessionConfiguration.default
         
         if let url = URL(string: "http://localhost/test2.php") {
