@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WebAPI {
+class WebApi {
     func getAddConfiguration(url: URL, configuration: URLSessionConfiguration, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
         let session = URLSession(configuration: configuration)
         session.dataTask(with: url, completionHandler: completionHandler).resume()

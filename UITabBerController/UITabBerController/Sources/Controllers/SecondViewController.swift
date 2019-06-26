@@ -27,7 +27,7 @@ class SecondViewController: UIViewController {
     }
     
     private func setUpTableItems() {
-        WebAPI().getTableItems(completionHandler: { (items) in
+        WebApi().getTableItems(completionHandler: { (items) in
             self.secondViewModel.items = items
             DispatchQueue.main.async {
                 self.tableView.reloadData()

@@ -68,7 +68,7 @@ class FirstViewController: UIViewController {
     }
     
     private func setUpButtonImage() {
-        let webApi = WebAPI()
+        let webApi = WebApi()
         webApi.loadButtonImage(url: self.firstViewModel.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[0].setImage(image, for: .normal)
         })
