@@ -34,35 +34,6 @@ class SecondViewController: UIViewController {
             }
         })
     }
-    
-//    private func get(url: URL, queryItems: [URLQueryItem]? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-//        //        var components = URLComponents(string: url)
-//        //        components?.queryItems = queryItems
-//        //        let url = components?.url
-//        URLSession.shared.dataTask(with: url, completionHandler: completionHandler).resume()
-//    }
-    
-    
-    //    func get(url urlString: String, queryItems: [URLQueryItem]? = nil) {
-    //        var components = URLComponents(string: urlString)
-    //        components?.queryItems = queryItems
-    //        let url = components?.url
-    //        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-    //            if let data = data {
-    //
-    //                do {
-    //                    let decoder = JSONDecoder()
-    //                    let title = try decoder.decode([Item].self, from: data)
-    //                    print(title[0].title)
-    //                } catch {
-    //                    print("Serialize Error")
-    //                }
-    //            } else {
-    //                print(error ?? "Error")
-    //            }
-    //        }
-    //        task.resume()
-    //    }
 }
 
 extension SecondViewController: UITableViewDelegate {
