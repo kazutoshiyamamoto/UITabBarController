@@ -21,7 +21,7 @@ class WebAPI {
         configuration.urlCache = nil
         
         if let url = URL(string: url) {
-            WebAPI().getAddConfiguration(url: url, configuration: configuration, completionHandler: {(data, response, error) -> Void in
+            self.getAddConfiguration(url: url, configuration: configuration, completionHandler: {(data, response, error) -> Void in
                 if let error = error {
                     print(error.localizedDescription)
                     return
