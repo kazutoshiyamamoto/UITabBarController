@@ -124,25 +124,25 @@ extension FirstViewController: UICollectionViewDelegate {
     // TODO:default消すとエラーになる現象の解消
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
-        case (CollectionViewCellType.First.rawValue, CollectionViewCellType.FirstItems.First.rawValue):
+        case (FirstViewCellType.First.rawValue, FirstViewCellType.FirstItems.First.rawValue):
             print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (CollectionViewCellType.First.rawValue, CollectionViewCellType.FirstItems.Second.rawValue):
+        case (FirstViewCellType.First.rawValue, FirstViewCellType.FirstItems.Second.rawValue):
             print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (CollectionViewCellType.First.rawValue, CollectionViewCellType.FirstItems.Third.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
-            
-        case (CollectionViewCellType.Second.rawValue, CollectionViewCellType.SecondItems.First.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (CollectionViewCellType.Second.rawValue, CollectionViewCellType.SecondItems.Second.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (CollectionViewCellType.Second.rawValue, CollectionViewCellType.SecondItems.Third.rawValue):
+        case (FirstViewCellType.First.rawValue, FirstViewCellType.FirstItems.Third.rawValue):
             print(self.firstViewModel.data[indexPath.section][indexPath.row])
             
-        case (CollectionViewCellType.Third.rawValue, CollectionViewCellType.ThirdItems.First.rawValue):
+        case (FirstViewCellType.Second.rawValue, FirstViewCellType.SecondItems.First.rawValue):
             print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (CollectionViewCellType.Third.rawValue, CollectionViewCellType.ThirdItems.Second.rawValue):
+        case (FirstViewCellType.Second.rawValue, FirstViewCellType.SecondItems.Second.rawValue):
             print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (CollectionViewCellType.Third.rawValue, CollectionViewCellType.ThirdItems.Third.rawValue):
+        case (FirstViewCellType.Second.rawValue, FirstViewCellType.SecondItems.Third.rawValue):
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
+            
+        case (FirstViewCellType.Third.rawValue, FirstViewCellType.ThirdItems.First.rawValue):
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
+        case (FirstViewCellType.Third.rawValue, FirstViewCellType.ThirdItems.Second.rawValue):
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
+        case (FirstViewCellType.Third.rawValue, FirstViewCellType.ThirdItems.Third.rawValue):
             print(self.firstViewModel.data[indexPath.section][indexPath.row])
             
         default:

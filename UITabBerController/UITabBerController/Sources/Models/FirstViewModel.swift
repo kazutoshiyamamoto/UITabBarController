@@ -8,6 +8,30 @@
 
 import UIKit
 
+enum FirstViewCellType: Int {
+    case First = 0
+    case Second
+    case Third
+    
+    enum FirstItems: Int {
+        case First = 0
+        case Second
+        case Third
+    }
+    
+    enum SecondItems: Int {
+        case First = 0
+        case Second
+        case Third
+    }
+    
+    enum ThirdItems: Int {
+        case First = 0
+        case Second
+        case Third
+    }
+}
+
 class FirstViewModel: NSObject {
     var timer: Timer!
     
