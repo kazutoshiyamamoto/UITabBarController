@@ -6,4 +6,46 @@
 //  Copyright © 2019 Swift-beginners. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class FirstViewModel: NSObject {
+    var timer: Timer!
+    
+    let firstButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220300.jpg"
+    let secondButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220253.jpg"
+    let thirdButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220248.jpg"
+    
+    let sectionName = [["Section1"], ["Section2"], ["Section3"]]
+    let data = [["item1", "item2", "item3"], ["item4", "item5", "item6"], ["item7", "item8", "item9"]]
+    let photo = [["photo1", "photo2", "photo3"], ["photo4", "photo5", "photo6"], ["photo7", "photo8", "photo9"]]
+}
+
+extension FirstViewModel: UICollectionViewDataSource {
+    // セルの数を返す
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.data[section].count
+    }
+    
+    // ヘッダーの数
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return self.sectionName.count
+    }
+    
+    // セルの設定
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        let cellImage = UIImage(named: self.photo[indexPath.section][indexPath.item])!
+        let cellText = self.data[indexPath.section][indexPath.item]
+        cell.setUpContents(image: cellImage,textName: cellText)
+        
+        return cell
+    }
+    
+    // ヘッダーの設定
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let collectionViewHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! CollectionViewHeader
+        let headerText = self.sectionName[indexPath.section][indexPath.item]
+        collectionViewHeader.setUpContents(titleText: headerText)
+        return collectionViewHeader
+    }
+}

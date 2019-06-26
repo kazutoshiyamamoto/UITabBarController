@@ -17,15 +17,8 @@ class FirstViewController: UIViewController {
     private var buttons: [UIButton] = []
     
     private var offsetX: CGFloat = 0
-    private var timer: Timer!
     
-    private let firstButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220300.jpg"
-    private let secondButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220253.jpg"
-    private let thirdButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220248.jpg"
-    
-    private let sectionName = [["Section1"], ["Section2"], ["Section3"]]
-    private let data = [["item1", "item2", "item3"], ["item4", "item5", "item6"], ["item7", "item8", "item9"]]
-    private let photo = [["photo1", "photo2", "photo3"], ["photo4", "photo5", "photo6"], ["photo7", "photo8", "photo9"]]
+    private let firstViewModel = FirstViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +30,7 @@ class FirstViewController: UIViewController {
         self.collectionView.register(UINib(nibName: "CollectionViewHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
         
         self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        self.collectionView.dataSource = firstViewModel
         
         self.setUpButtons()
     }
@@ -47,13 +40,13 @@ class FirstViewController: UIViewController {
         self.setUpButtonImage()
         
         // タイマーを作成
-        self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
+        self.firstViewModel.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // タイマーを破棄
-        if let workingTimer = self.timer {
+        if let workingTimer = self.firstViewModel.timer {
             workingTimer.invalidate()
         }
     }
@@ -76,20 +69,18 @@ class FirstViewController: UIViewController {
     
     private func setUpButtonImage() {
         let webApi = WebAPI()
-        webApi.loadButtonImage(url: self.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        webApi.loadButtonImage(url: self.firstViewModel.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[0].setImage(image, for: .normal)
         })
         
-        webApi.loadButtonImage(url: self.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        webApi.loadButtonImage(url: self.firstViewModel.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[1].setImage(image, for: .normal)
         })
         
-        webApi.loadButtonImage(url: self.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        webApi.loadButtonImage(url: self.firstViewModel.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[2].setImage(image, for: .normal)
         })
     }
-    
-
     
     @objc private func transitionDetail(_ sender: UIButton) {
         enum ButtonTag: Int {
@@ -134,59 +125,29 @@ extension FirstViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (CollectionViewCellType.First.rawValue, CollectionViewCellType.FirstItems.First.rawValue):
-            print(data[indexPath.section][indexPath.row])
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
         case (CollectionViewCellType.First.rawValue, CollectionViewCellType.FirstItems.Second.rawValue):
-            print(data[indexPath.section][indexPath.row])
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
         case (CollectionViewCellType.First.rawValue, CollectionViewCellType.FirstItems.Third.rawValue):
-            print(data[indexPath.section][indexPath.row])
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
             
         case (CollectionViewCellType.Second.rawValue, CollectionViewCellType.SecondItems.First.rawValue):
-            print(data[indexPath.section][indexPath.row])
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
         case (CollectionViewCellType.Second.rawValue, CollectionViewCellType.SecondItems.Second.rawValue):
-            print(data[indexPath.section][indexPath.row])
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
         case (CollectionViewCellType.Second.rawValue, CollectionViewCellType.SecondItems.Third.rawValue):
-            print(data[indexPath.section][indexPath.row])
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
             
         case (CollectionViewCellType.Third.rawValue, CollectionViewCellType.ThirdItems.First.rawValue):
-            print(data[indexPath.section][indexPath.row])
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
         case (CollectionViewCellType.Third.rawValue, CollectionViewCellType.ThirdItems.Second.rawValue):
-            print(data[indexPath.section][indexPath.row])
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
         case (CollectionViewCellType.Third.rawValue, CollectionViewCellType.ThirdItems.Third.rawValue):
-            print(data[indexPath.section][indexPath.row])
+            print(self.firstViewModel.data[indexPath.section][indexPath.row])
             
         default:
             print("テスト")
         }
-    }
-}
-
-extension FirstViewController: UICollectionViewDataSource {
-    // セルの数を返す
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.data[section].count
-    }
-    
-    // ヘッダーの数
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return self.sectionName.count
-    }
-    
-    // セルの設定
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        let cellImage = UIImage(named: photo[indexPath.section][indexPath.item])!
-        let cellText = data[indexPath.section][indexPath.item]
-        cell.setUpContents(image: cellImage,textName: cellText)
-        
-        return cell
-    }
-    
-    // ヘッダーの設定
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let collectionViewHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! CollectionViewHeader
-        let headerText = sectionName[indexPath.section][indexPath.item]
-        collectionViewHeader.setUpContents(titleText: headerText)
-        return collectionViewHeader
     }
 }
 
