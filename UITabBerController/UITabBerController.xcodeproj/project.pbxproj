@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD1C34E022C11F3A00C3B8EE /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34DF22C11F3A00C3B8EE /* WebAPI.swift */; };
+		FD1C34E022C11F3A00C3B8EE /* WebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */; };
 		FD1C34E422C39DC400C3B8EE /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34E322C39DC400C3B8EE /* FirstViewModel.swift */; };
 		FD1C34E622C39DD800C3B8EE /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34E522C39DD700C3B8EE /* SecondViewModel.swift */; };
 		FD96C3C8206F24AF0013BF37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD96C3C7206F24AF0013BF37 /* AppDelegate.swift */; };
@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FD1C34DF22C11F3A00C3B8EE /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
+		FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApi.swift; sourceTree = "<group>"; };
 		FD1C34E322C39DC400C3B8EE /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
 		FD1C34E522C39DD700C3B8EE /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		FD96C3C4206F24AF0013BF37 /* UITabBerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITabBerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +102,7 @@
 				FD07066522C110DC0040F9B1 /* Views */,
 				FD1C34D922C111A000C3B8EE /* Controllers */,
 				FD1C34DA22C111C200C3B8EE /* Models */,
-				FD1C34DF22C11F3A00C3B8EE /* WebAPI.swift */,
+				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -229,7 +229,7 @@
 			files = (
 				FD9C74B822A387DA00F58E5C /* CollectionViewCell.swift in Sources */,
 				FD1C34E622C39DD800C3B8EE /* SecondViewModel.swift in Sources */,
-				FD1C34E022C11F3A00C3B8EE /* WebAPI.swift in Sources */,
+				FD1C34E022C11F3A00C3B8EE /* WebApi.swift in Sources */,
 				FD9C74C422ABC45F00F58E5C /* CollectionViewHeader.swift in Sources */,
 				FD1C34E422C39DC400C3B8EE /* FirstViewModel.swift in Sources */,
 				FD96C3CC206F24AF0013BF37 /* SecondViewController.swift in Sources */,
