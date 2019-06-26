@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FD1C34E022C11F3A00C3B8EE /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34DF22C11F3A00C3B8EE /* WebAPI.swift */; };
-		FD1C34E222C1241D00C3B8EE /* WebAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34E122C1241D00C3B8EE /* WebAPIClient.swift */; };
 		FD96C3C8206F24AF0013BF37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD96C3C7206F24AF0013BF37 /* AppDelegate.swift */; };
 		FD96C3CA206F24AF0013BF37 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD96C3C9206F24AF0013BF37 /* FirstViewController.swift */; };
 		FD96C3CC206F24AF0013BF37 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD96C3CB206F24AF0013BF37 /* SecondViewController.swift */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		FD1C34DF22C11F3A00C3B8EE /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
-		FD1C34E122C1241D00C3B8EE /* WebAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIClient.swift; sourceTree = "<group>"; };
 		FD96C3C4206F24AF0013BF37 /* UITabBerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITabBerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD96C3C7206F24AF0013BF37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD96C3C9206F24AF0013BF37 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			children = (
 				FD96C3C7206F24AF0013BF37 /* AppDelegate.swift */,
 				FD1C34DF22C11F3A00C3B8EE /* WebAPI.swift */,
-				FD1C34E122C1241D00C3B8EE /* WebAPIClient.swift */,
 				FD07066522C110DC0040F9B1 /* Views */,
 				FD1C34D922C111A000C3B8EE /* Controllers */,
 				FD1C34DA22C111C200C3B8EE /* Models */,
@@ -231,7 +228,6 @@
 				FD1C34E022C11F3A00C3B8EE /* WebAPI.swift in Sources */,
 				FD9C74C422ABC45F00F58E5C /* CollectionViewHeader.swift in Sources */,
 				FD96C3CC206F24AF0013BF37 /* SecondViewController.swift in Sources */,
-				FD1C34E222C1241D00C3B8EE /* WebAPIClient.swift in Sources */,
 				FD96C3C8206F24AF0013BF37 /* AppDelegate.swift in Sources */,
 				FD9C74C722ABCBF400F58E5C /* CollectionViewCellType.swift in Sources */,
 				FD96C3CA206F24AF0013BF37 /* FirstViewController.swift in Sources */,
