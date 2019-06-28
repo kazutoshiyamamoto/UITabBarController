@@ -58,8 +58,8 @@
 		FD07066522C110DC0040F9B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FD1C34DD22C114E700C3B8EE /* Cell */,
-				FD1C34DE22C114F000C3B8EE /* Header */,
+				FD1C34DD22C114E700C3B8EE /* Cells */,
+				FD1C34DE22C114F000C3B8EE /* Headers */,
 				FD96C3D2206F24AF0013BF37 /* LaunchScreen.storyboard */,
 				FD96C3CD206F24AF0013BF37 /* Main.storyboard */,
 				FDB1FBFF22BE5318006C2AFD /* FirstView.storyboard */,
@@ -107,22 +107,22 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		FD1C34DD22C114E700C3B8EE /* Cell */ = {
+		FD1C34DD22C114E700C3B8EE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				FD9C74B722A387DA00F58E5C /* CollectionViewCell.xib */,
 				FD9C74B622A387DA00F58E5C /* CollectionViewCell.swift */,
 			);
-			path = Cell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
-		FD1C34DE22C114F000C3B8EE /* Header */ = {
+		FD1C34DE22C114F000C3B8EE /* Headers */ = {
 			isa = PBXGroup;
 			children = (
 				FD9C74C322ABC45F00F58E5C /* CollectionViewHeader.xib */,
 				FD9C74C222ABC45F00F58E5C /* CollectionViewHeader.swift */,
 			);
-			path = Header;
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		FD96C3BB206F24AF0013BF37 = {
