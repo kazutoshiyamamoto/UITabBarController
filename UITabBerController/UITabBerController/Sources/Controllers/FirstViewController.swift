@@ -18,7 +18,7 @@ class FirstViewController: UIViewController {
     
     private var offsetX: CGFloat = 0
     
-    private let firstViewModel = FirstViewModel()
+    private let menu = Menu()
     private let banner = Banner()
     
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ class FirstViewController: UIViewController {
         self.collectionView.register(UINib(nibName: "CollectionViewHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
         
         self.collectionView.delegate = self
-        self.collectionView.dataSource = firstViewModel
+        self.collectionView.dataSource = menu
         
         self.setUpButtons()
     }
@@ -125,26 +125,26 @@ extension FirstViewController: UICollectionViewDelegate {
     // TODO:default消すとエラーになる現象の解消
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
-        case (FirstViewCellType.First.rawValue, FirstViewCellType.FirstItems.First.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (FirstViewCellType.First.rawValue, FirstViewCellType.FirstItems.Second.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (FirstViewCellType.First.rawValue, FirstViewCellType.FirstItems.Third.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
+        case (MenuCellType.First.rawValue, MenuCellType.FirstItems.First.rawValue):
+            print(self.menu.data[indexPath.section][indexPath.row])
+        case (MenuCellType.First.rawValue, MenuCellType.FirstItems.Second.rawValue):
+            print(self.menu.data[indexPath.section][indexPath.row])
+        case (MenuCellType.First.rawValue, MenuCellType.FirstItems.Third.rawValue):
+            print(self.menu.data[indexPath.section][indexPath.row])
             
-        case (FirstViewCellType.Second.rawValue, FirstViewCellType.SecondItems.First.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (FirstViewCellType.Second.rawValue, FirstViewCellType.SecondItems.Second.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (FirstViewCellType.Second.rawValue, FirstViewCellType.SecondItems.Third.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
+        case (MenuCellType.Second.rawValue, MenuCellType.SecondItems.First.rawValue):
+            print(self.menu.data[indexPath.section][indexPath.row])
+        case (MenuCellType.Second.rawValue, MenuCellType.SecondItems.Second.rawValue):
+            print(self.menu.data[indexPath.section][indexPath.row])
+        case (MenuCellType.Second.rawValue, MenuCellType.SecondItems.Third.rawValue):
+            print(self.menu.data[indexPath.section][indexPath.row])
             
-        case (FirstViewCellType.Third.rawValue, FirstViewCellType.ThirdItems.First.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (FirstViewCellType.Third.rawValue, FirstViewCellType.ThirdItems.Second.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
-        case (FirstViewCellType.Third.rawValue, FirstViewCellType.ThirdItems.Third.rawValue):
-            print(self.firstViewModel.data[indexPath.section][indexPath.row])
+        case (MenuCellType.Third.rawValue, MenuCellType.ThirdItems.First.rawValue):
+            print(self.menu.data[indexPath.section][indexPath.row])
+        case (MenuCellType.Third.rawValue, MenuCellType.ThirdItems.Second.rawValue):
+            print(self.menu.data[indexPath.section][indexPath.row])
+        case (MenuCellType.Third.rawValue, MenuCellType.ThirdItems.Third.rawValue):
+            print(self.menu.data[indexPath.section][indexPath.row])
             
         default:
             print("テスト")
