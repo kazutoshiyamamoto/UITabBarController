@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewModel: NSObject {
+class Bannerl: NSObject {
 
     
     
