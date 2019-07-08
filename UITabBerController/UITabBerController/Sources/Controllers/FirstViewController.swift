@@ -19,6 +19,7 @@ class FirstViewController: UIViewController {
     private var offsetX: CGFloat = 0
     
     private let firstViewModel = FirstViewModel()
+    private let banner = Banner()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +41,13 @@ class FirstViewController: UIViewController {
         self.setUpButtonImage()
         
         // タイマーを作成
-        self.firstViewModel.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
+        self.banner.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // タイマーを破棄
-        if let workingTimer = self.firstViewModel.timer {
+        if let workingTimer = self.banner.timer {
             workingTimer.invalidate()
         }
     }
@@ -69,15 +70,15 @@ class FirstViewController: UIViewController {
     
     private func setUpButtonImage() {
         let webApi = WebApi()
-        webApi.loadButtonImage(url: self.firstViewModel.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        webApi.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[0].setImage(image, for: .normal)
         })
         
-        webApi.loadButtonImage(url: self.firstViewModel.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        webApi.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[1].setImage(image, for: .normal)
         })
         
-        webApi.loadButtonImage(url: self.firstViewModel.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        webApi.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[2].setImage(image, for: .normal)
         })
     }
