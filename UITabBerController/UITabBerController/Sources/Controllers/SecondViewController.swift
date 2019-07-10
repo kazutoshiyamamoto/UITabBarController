@@ -12,7 +12,7 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private let secondViewModel = SecondViewModel()
+    private let secondViewModel = List()
     
     override func viewDidLoad() {
         super.viewDidLoad()
