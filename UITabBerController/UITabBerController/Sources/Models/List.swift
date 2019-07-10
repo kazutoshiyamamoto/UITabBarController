@@ -12,13 +12,13 @@ struct Item: Codable {
     var title: String
 }
 
-class SecondViewModel: NSObject {
+class List: NSObject {
     // テーブルビューに表示するデータ
     let sectionTitle = ["Section1"]
     var items: [Item] = []
 }
 
-extension SecondViewModel: UITableViewDataSource {
+extension List: UITableViewDataSource {
     // セクション数
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitle.count
