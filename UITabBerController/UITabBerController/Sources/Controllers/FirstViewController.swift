@@ -31,7 +31,7 @@ class FirstViewController: UIViewController {
         self.collectionView.register(UINib(nibName: "CollectionViewHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
         
         self.collectionView.delegate = self
-        self.collectionView.dataSource = menu
+        self.collectionView.dataSource = self.menu
         
         self.setUpButtons()
     }
@@ -69,15 +69,15 @@ class FirstViewController: UIViewController {
     }
     
     private func setUpButtonImage() {
-        banner.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        self.banner.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[0].setImage(image, for: .normal)
         })
         
-        banner.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        self.banner.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[1].setImage(image, for: .normal)
         })
         
-        banner.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        self.banner.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[2].setImage(image, for: .normal)
         })
     }

@@ -17,7 +17,7 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
-        self.tableView.dataSource = list
+        self.tableView.dataSource = self.list
         
         self.setUpTableItems()
     }
@@ -27,7 +27,7 @@ class SecondViewController: UIViewController {
     }
     
     private func setUpTableItems() {
-        list.getTableItems(completionHandler: { (items) in
+        self.list.getTableItems(completionHandler: { (items) in
             self.list.items = items
             DispatchQueue.main.async {
                 self.tableView.reloadData()
