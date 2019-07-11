@@ -12,12 +12,12 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private let secondViewModel = List()
+    private let list = List()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
-        self.tableView.dataSource = secondViewModel
+        self.tableView.dataSource = list
         
         self.setUpTableItems()
     }
@@ -27,8 +27,8 @@ class SecondViewController: UIViewController {
     }
     
     private func setUpTableItems() {
-        WebApi().getTableItems(completionHandler: { (items) in
-            self.secondViewModel.items = items
+        list.getTableItems(completionHandler: { (items) in
+            self.list.items = items
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -39,6 +39,6 @@ class SecondViewController: UIViewController {
 extension SecondViewController: UITableViewDelegate {
     // セル選択時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.secondViewModel.items[indexPath.row].title)
+        print(self.list.items[indexPath.row].title)
     }
 }
