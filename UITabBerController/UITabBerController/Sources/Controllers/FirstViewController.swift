@@ -69,16 +69,15 @@ class FirstViewController: UIViewController {
     }
     
     private func setUpButtonImage() {
-        let webApi = WebApi()
-        webApi.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        banner.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[0].setImage(image, for: .normal)
         })
         
-        webApi.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        banner.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[1].setImage(image, for: .normal)
         })
         
-        webApi.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        banner.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.buttons[2].setImage(image, for: .normal)
         })
     }
