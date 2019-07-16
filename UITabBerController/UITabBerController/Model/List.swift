@@ -8,10 +8,6 @@
 
 import UIKit
 
-struct ListItem: Codable {
-    var title: String
-}
-
 class List: NSObject {
     // テーブルビューに表示するデータ
     let sectionTitle = ["Section1"]

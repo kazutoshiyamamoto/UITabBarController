@@ -6,8 +6,11 @@
 //  Copyright © 2019 Swift-beginners. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
+struct ListItem: Codable {
+    var title: String
+}
 
 class WebApi {
     func getAddConfiguration(url: URL, configuration: URLSessionConfiguration, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
