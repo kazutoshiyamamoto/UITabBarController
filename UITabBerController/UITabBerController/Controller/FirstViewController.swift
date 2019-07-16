@@ -65,15 +65,16 @@ class FirstViewController: UIViewController {
     }
     
     private func setUpButtonImage() {
-        self.banner.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        let imageDownload = ImageDownload()
+        imageDownload.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.banner.buttons[0].setImage(image, for: .normal)
         })
         
-        self.banner.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        imageDownload.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.banner.buttons[1].setImage(image, for: .normal)
         })
         
-        self.banner.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        imageDownload.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.banner.buttons[2].setImage(image, for: .normal)
         })
     }
