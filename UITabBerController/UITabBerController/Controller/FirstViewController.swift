@@ -14,10 +14,6 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var buttons: [UIButton] = []
-    
-    private var offsetX: CGFloat = 0
-    
     private let menu = Menu()
     private let banner = Banner()
     
@@ -64,21 +60,21 @@ class FirstViewController: UIViewController {
             button.imageView?.contentMode = .scaleAspectFill
             button.addTarget(self, action: #selector(transitionDetail), for: UIControl.Event.touchUpInside)
             self.scrollView.addSubview(button)
-            self.buttons.append(button)
+            self.banner.buttons.append(button)
         }
     }
     
     private func setUpButtonImage() {
         self.banner.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
-            self.buttons[0].setImage(image, for: .normal)
+            self.banner.buttons[0].setImage(image, for: .normal)
         })
         
         self.banner.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
-            self.buttons[1].setImage(image, for: .normal)
+            self.banner.buttons[1].setImage(image, for: .normal)
         })
         
         self.banner.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
-            self.buttons[2].setImage(image, for: .normal)
+            self.banner.buttons[2].setImage(image, for: .normal)
         })
     }
     
@@ -104,16 +100,16 @@ class FirstViewController: UIViewController {
     // offsetXの値を更新することページを移動
     @objc private func scrollPage() {
         // 画面の幅分offsetXを移動
-        self.offsetX += self.view.frame.size.width
+        self.banner.offsetX += self.view.frame.size.width
         // 3ページ目まで移動したら1ページ目まで戻る
-        if self.offsetX < self.view.frame.size.width * 3 {
+        if self.banner.offsetX < self.view.frame.size.width * 3 {
             UIView.animate(withDuration: 0.2) {
-                self.scrollView.contentOffset.x = self.offsetX
+                self.scrollView.contentOffset.x = self.banner.offsetX
             }
         } else {
             UIView.animate(withDuration: 0.2) {
-                self.offsetX = 0
-                self.scrollView.contentOffset.x = self.offsetX
+                self.banner.offsetX = 0
+                self.scrollView.contentOffset.x = self.banner.offsetX
             }
         }
     }
@@ -156,7 +152,7 @@ extension FirstViewController: UIScrollViewDelegate {
         // scrollViewのページ移動に合わせてpageControlの表示も移動
         self.pageControl.currentPage = Int(self.scrollView.contentOffset.x / self.scrollView.frame.size.width)
         // offsetXの値を更新
-        self.offsetX = self.scrollView.contentOffset.x
+        self.banner.offsetX = self.scrollView.contentOffset.x
     }
 }
 
