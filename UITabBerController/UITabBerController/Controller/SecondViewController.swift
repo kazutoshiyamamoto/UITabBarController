@@ -9,7 +9,7 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     private let list = List()
@@ -27,7 +27,7 @@ class SecondViewController: UIViewController {
     }
     
     private func setUpTableItems() {
-        self.list.getTableItems(completionHandler: { (items) in
+        Service().getTableItems(completionHandler: { (items) in
             self.list.items = items
             DispatchQueue.main.async {
                 self.tableView.reloadData()
