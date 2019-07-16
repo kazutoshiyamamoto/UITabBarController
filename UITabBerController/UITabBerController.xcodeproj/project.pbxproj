@@ -120,9 +120,17 @@
 		FD1C34E922DDFD4F00C3B8EE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
+				FD1C34EB22DDFDB200C3B8EE /* API */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		FD1C34EB22DDFDB200C3B8EE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		FD96C3BB206F24AF0013BF37 = {
