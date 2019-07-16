@@ -12,7 +12,7 @@ struct ListItem: Codable {
     var title: String
 }
 
-class WebApi {
+class WebApi: ApiClient {
     func getAddConfiguration(url: URL, configuration: URLSessionConfiguration, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
         let session = URLSession(configuration: configuration)
         session.dataTask(with: url, completionHandler: completionHandler).resume()
