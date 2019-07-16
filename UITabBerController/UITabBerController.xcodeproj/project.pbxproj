@@ -57,7 +57,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FD07066522C110DC0040F9B1 /* Views */ = {
+		FD07066522C110DC0040F9B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				FD1C34DD22C114E700C3B8EE /* Cells */,
@@ -67,35 +67,35 @@
 				FDB1FBFF22BE5318006C2AFD /* FirstView.storyboard */,
 				FDB1FC0122BE54C3006C2AFD /* SecondView.storyboard */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		FD1C34D922C111A000C3B8EE /* Controllers */ = {
+		FD1C34D922C111A000C3B8EE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				FD96C3C9206F24AF0013BF37 /* FirstViewController.swift */,
 				FD96C3CB206F24AF0013BF37 /* SecondViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		FD1C34DA22C111C200C3B8EE /* Models */ = {
+		FD1C34DA22C111C200C3B8EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FD1C34E322C39DC400C3B8EE /* Menu.swift */,
 				FD1C34E722D390BE00C3B8EE /* Banner.swift */,
 				FD1C34E522C39DD700C3B8EE /* List.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		FD1C34DB22C1141300C3B8EE /* Resources */ = {
+		FD1C34DB22C1141300C3B8EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				FD96C3D0206F24AF0013BF37 /* Assets.xcassets */,
 				FD96C3D5206F24AF0013BF37 /* Info.plist */,
 			);
-			path = Resources;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		FD1C34DD22C114E700C3B8EE /* Cells */ = {
@@ -135,11 +135,11 @@
 		FD96C3C6206F24AF0013BF37 /* UITabBerController */ = {
 			isa = PBXGroup;
 			children = (
-				FD1C34DB22C1141300C3B8EE /* Resources */,
+				FD1C34DB22C1141300C3B8EE /* Resource */,
 				FD96C3C7206F24AF0013BF37 /* AppDelegate.swift */,
-				FD07066522C110DC0040F9B1 /* Views */,
-				FD1C34D922C111A000C3B8EE /* Controllers */,
-				FD1C34DA22C111C200C3B8EE /* Models */,
+				FD07066522C110DC0040F9B1 /* View */,
+				FD1C34D922C111A000C3B8EE /* Controller */,
+				FD1C34DA22C111C200C3B8EE /* Model */,
 				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
 			);
 			path = UITabBerController;
