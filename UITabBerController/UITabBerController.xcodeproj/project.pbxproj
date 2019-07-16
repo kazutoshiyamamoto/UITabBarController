@@ -82,6 +82,7 @@
 		FD1C34DA22C111C200C3B8EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
 				FD1C34E322C39DC400C3B8EE /* Menu.swift */,
 				FD1C34E722D390BE00C3B8EE /* Banner.swift */,
 				FD1C34E522C39DD700C3B8EE /* List.swift */,
@@ -140,7 +141,6 @@
 				FD07066522C110DC0040F9B1 /* View */,
 				FD1C34D922C111A000C3B8EE /* Controller */,
 				FD1C34DA22C111C200C3B8EE /* Model */,
-				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
 			);
 			path = UITabBerController;
 			sourceTree = "<group>";
