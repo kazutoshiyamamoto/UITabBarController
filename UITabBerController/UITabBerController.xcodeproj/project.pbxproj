@@ -98,18 +98,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		FD1C34DC22C1143F00C3B8EE /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				FD96C3C7206F24AF0013BF37 /* AppDelegate.swift */,
-				FD07066522C110DC0040F9B1 /* Views */,
-				FD1C34D922C111A000C3B8EE /* Controllers */,
-				FD1C34DA22C111C200C3B8EE /* Models */,
-				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		FD1C34DD22C114E700C3B8EE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +136,11 @@
 			isa = PBXGroup;
 			children = (
 				FD1C34DB22C1141300C3B8EE /* Resources */,
-				FD1C34DC22C1143F00C3B8EE /* Sources */,
+				FD96C3C7206F24AF0013BF37 /* AppDelegate.swift */,
+				FD07066522C110DC0040F9B1 /* Views */,
+				FD1C34D922C111A000C3B8EE /* Controllers */,
+				FD1C34DA22C111C200C3B8EE /* Models */,
+				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
 			);
 			path = UITabBerController;
 			sourceTree = "<group>";
