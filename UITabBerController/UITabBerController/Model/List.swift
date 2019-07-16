@@ -8,16 +8,16 @@
 
 import UIKit
 
-struct Item: Codable {
+struct ListItem: Codable {
     var title: String
 }
 
 class List: NSObject {
     // テーブルビューに表示するデータ
     let sectionTitle = ["Section1"]
-    var items: [Item] = []
+    var items: [ListItem] = []
     
-    func getTableItems(completionHandler: @escaping ([Item]) -> ()) {
+    func getTableItems(completionHandler: @escaping ([ListItem]) -> ()) {
         let configuration = URLSessionConfiguration.default
         
         if let url = URL(string: "http://localhost/test2.php") {
@@ -26,7 +26,7 @@ class List: NSObject {
                     
                     do {
                         let decoder = JSONDecoder()
-                        let items = try decoder.decode([Item].self, from: data)
+                        let items = try decoder.decode([ListItem].self, from: data)
                         completionHandler(items)
                     } catch {
                         print("Serialize Error")
