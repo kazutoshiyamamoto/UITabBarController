@@ -82,7 +82,7 @@
 		FD1C34DA22C111C200C3B8EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
+				FD1C34E922DDFD4F00C3B8EE /* Network */,
 				FD1C34E322C39DC400C3B8EE /* Menu.swift */,
 				FD1C34E722D390BE00C3B8EE /* Banner.swift */,
 				FD1C34E522C39DD700C3B8EE /* List.swift */,
@@ -115,6 +115,14 @@
 				FD9C74C222ABC45F00F58E5C /* CollectionViewHeader.swift */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		FD1C34E922DDFD4F00C3B8EE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FD96C3BB206F24AF0013BF37 = {
