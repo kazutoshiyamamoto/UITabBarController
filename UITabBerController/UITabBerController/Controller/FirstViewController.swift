@@ -11,6 +11,9 @@ import UIKit
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var leftBanner: UIButton!
+    @IBOutlet weak var centerBanner: UIButton!
+    @IBOutlet weak var rightBanner: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -29,12 +32,12 @@ class FirstViewController: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self.menu
         
-        self.setUpButtons()
+//        self.setUpButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setUpButtonImage()
+//        self.setUpButtonImage()
         
         // タイマーを作成
         self.banner.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
