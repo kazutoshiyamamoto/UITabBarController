@@ -11,9 +11,9 @@ import UIKit
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var leftBanner: UIButton!
-    @IBOutlet weak var centerBanner: UIButton!
-    @IBOutlet weak var rightBanner: UIButton!
+    @IBOutlet weak var leftView: UIView!
+    @IBOutlet weak var centerView: UIView!
+    @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -22,7 +22,7 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.scrollView.contentSize = CGSize(width: self.view.frame.width * 3, height: self.scrollView.frame.height)
+//        self.scrollView.contentSize = CGSize(width: self.view.frame.width * 3, height: self.scrollView.frame.height)
         
         self.scrollView.delegate = self
         
