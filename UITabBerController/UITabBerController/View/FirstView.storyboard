@@ -19,11 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8zo-oo-uM3">
-                                <rect key="frame" x="0.0" y="253" width="1125" height="476"/>
+                                <rect key="frame" x="0.0" y="254" width="1125" height="475"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="476" id="25z-3s-55q"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="20" id="g9j-w5-zEd">
                                     <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -33,7 +30,7 @@
                                 <cells/>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xeA-pf-Ngq">
-                                <rect key="frame" x="918" y="237" width="39" height="15"/>
+                                <rect key="frame" x="918" y="238" width="39" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="AtS-yq-I4y"/>
                                 </constraints>
@@ -41,24 +38,25 @@
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRv-TP-4i0">
-                                <rect key="frame" x="0.0" y="88" width="375" height="149"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" placeholder="YES" id="97w-o7-xrs"/>
+                                    <constraint firstAttribute="height" constant="150" id="sQc-d2-Lep"/>
                                 </constraints>
                             </containerView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEI-9x-Tae">
-                                <rect key="frame" x="0.0" y="88" width="1125" height="149"/>
+                                <rect key="frame" x="0.0" y="88" width="1125" height="150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64U-2o-hcm">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         <color key="backgroundColor" red="0.1137254902" green="0.91372549020000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCf-Di-Mrl">
-                                        <rect key="frame" x="375" y="0.0" width="375" height="149"/>
+                                        <rect key="frame" x="375" y="0.0" width="375" height="150"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axT-ve-Nwo">
-                                        <rect key="frame" x="750" y="0.0" width="375" height="149"/>
+                                        <rect key="frame" x="750" y="0.0" width="375" height="150"/>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
