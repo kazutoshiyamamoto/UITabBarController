@@ -16,14 +16,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-I3-eXQ">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-I3-eXQ">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UaR-I3-eXQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="4Ll-1E-8tf"/>
+                <constraint firstItem="UaR-I3-eXQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Ayd-9m-Q0g"/>
+                <constraint firstItem="UaR-I3-eXQ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="fIc-9r-OFZ"/>
+                <constraint firstItem="UaR-I3-eXQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="z2z-bO-IMb"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
         </view>
