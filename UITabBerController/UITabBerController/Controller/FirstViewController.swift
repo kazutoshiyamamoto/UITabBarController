@@ -55,6 +55,8 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    
+    
     private func setUpButtons() {
         for i in 0 ..< 3 {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.scrollView.frame.size.height))

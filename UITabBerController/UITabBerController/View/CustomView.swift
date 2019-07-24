@@ -19,4 +19,8 @@ class CustomView: UIView {
         view.frame = self.bounds
         self.addSubview(view)
     }
+    
+    @IBAction func ButtonAction(_ sender: Any) {
+        print("テスト")
+    }
 }
