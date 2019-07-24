@@ -9,6 +9,9 @@
 import UIKit
 
 class CustomView: UIView {
+    
+    @IBOutlet weak var bannerButton: UIButton!
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         loadNib()
