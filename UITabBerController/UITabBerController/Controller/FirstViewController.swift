@@ -37,7 +37,7 @@ class FirstViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.setUpButtonImage()
+        self.setUpButtonImage()
         
         // タイマーを作成
         self.banner.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
@@ -55,51 +55,51 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    private func setUpButtons() {
-        for i in 0 ..< 3 {
-            let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
-            button.frame = CGRect(origin: CGPoint(x: self.view.frame.size.width * CGFloat(i), y: 0), size: CGSize(width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
-            button.tag += i
-            button.imageView?.contentMode = .scaleAspectFill
-            button.addTarget(self, action: #selector(transitionDetail), for: UIControl.Event.touchUpInside)
-            self.scrollView.addSubview(button)
-            self.banner.buttons.append(button)
-        }
-    }
+//    private func setUpButtons() {
+//        for i in 0 ..< 3 {
+//            let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
+//            button.frame = CGRect(origin: CGPoint(x: self.view.frame.size.width * CGFloat(i), y: 0), size: CGSize(width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
+//            button.tag += i
+//            button.imageView?.contentMode = .scaleAspectFill
+//            button.addTarget(self, action: #selector(transitionDetail), for: UIControl.Event.touchUpInside)
+//            self.scrollView.addSubview(button)
+//            self.banner.buttons.append(button)
+//        }
+//    }
     
     private func setUpButtonImage() {
         let imageDownload = ImageDownload()
         imageDownload.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
-            self.banner.buttons[0].setImage(image, for: .normal)
+            self.leftBannerButton.bannerButton.setImage(image, for: .normal)
         })
         
         imageDownload.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
-            self.banner.buttons[1].setImage(image, for: .normal)
+            self.centerBannerButton.bannerButton.setImage(image, for: .normal)
         })
         
         imageDownload.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
-            self.banner.buttons[2].setImage(image, for: .normal)
+            self.rightBannerButton.bannerButton.setImage(image, for: .normal)
         })
     }
     
-    @objc private func transitionDetail(_ sender: UIButton) {
-        enum ButtonTag: Int {
-            case first = 0
-            case second
-            case third
-        }
-        
-        if let buttonTag = ButtonTag(rawValue: sender.tag) {
-            switch buttonTag {
-            case .first:
-                print("ボタン1")
-            case .second:
-                print("ボタン2")
-            case .third:
-                print("ボタン3")
-            }
-        }
-    }
+//    @objc private func transitionDetail(_ sender: UIButton) {
+//        enum ButtonTag: Int {
+//            case first = 0
+//            case second
+//            case third
+//        }
+//
+//        if let buttonTag = ButtonTag(rawValue: sender.tag) {
+//            switch buttonTag {
+//            case .first:
+//                print("ボタン1")
+//            case .second:
+//                print("ボタン2")
+//            case .third:
+//                print("ボタン3")
+//            }
+//        }
+//    }
     
     // offsetXの値を更新することページを移動
     @objc private func scrollPage() {
