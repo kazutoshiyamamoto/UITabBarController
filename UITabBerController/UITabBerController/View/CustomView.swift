@@ -20,7 +20,7 @@ class CustomView: UIView {
         self.addSubview(view)
     }
     
-    @IBAction func ButtonAction(_ sender: Any) {
+    @IBAction func bannerTapped(_ sender: Any) {
         print("テスト")
     }
 }

@@ -21,7 +21,7 @@
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <connections>
-                        <action selector="ButtonAction:" destination="-1" eventType="touchUpInside" id="wwY-Ol-aiI"/>
+                        <action selector="bannerTapped:" destination="-1" eventType="touchUpInside" id="Do2-3J-I8t"/>
                     </connections>
                 </button>
             </subviews>
