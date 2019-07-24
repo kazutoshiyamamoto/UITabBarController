@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FD0EF4BA22E8A77800F574ED /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF4B922E8A77800F574ED /* CustomView.xib */; };
+		FD0EF4BC22E8A82400F574ED /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0EF4BB22E8A82400F574ED /* CustomView.swift */; };
 		FD1C34E022C11F3A00C3B8EE /* WebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */; };
 		FD1C34E422C39DC400C3B8EE /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34E322C39DC400C3B8EE /* Menu.swift */; };
 		FD1C34E622C39DD800C3B8EE /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34E522C39DD700C3B8EE /* List.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		FD0EF4B922E8A77800F574ED /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
+		FD0EF4BB22E8A82400F574ED /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApi.swift; sourceTree = "<group>"; };
 		FD1C34E322C39DC400C3B8EE /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		FD1C34E522C39DD700C3B8EE /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				FD96C3CD206F24AF0013BF37 /* Main.storyboard */,
 				FDB1FBFF22BE5318006C2AFD /* FirstView.storyboard */,
 				FD0EF4B922E8A77800F574ED /* CustomView.xib */,
+				FD0EF4BB22E8A82400F574ED /* CustomView.swift */,
 				FDB1FC0122BE54C3006C2AFD /* SecondView.storyboard */,
 			);
 			path = View;
@@ -257,6 +260,7 @@
 				FD1C34E022C11F3A00C3B8EE /* WebApi.swift in Sources */,
 				FD9C74C422ABC45F00F58E5C /* CollectionViewHeader.swift in Sources */,
 				FD1C34ED22DDFE7400C3B8EE /* ImageDownload.swift in Sources */,
+				FD0EF4BC22E8A82400F574ED /* CustomView.swift in Sources */,
 				FD1C34E422C39DC400C3B8EE /* Menu.swift in Sources */,
 				FD96C3CC206F24AF0013BF37 /* SecondViewController.swift in Sources */,
 				FD1C34EF22DE02F400C3B8EE /* Service.swift in Sources */,
