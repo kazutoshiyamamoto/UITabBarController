@@ -11,9 +11,9 @@ import UIKit
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var leftView: UIView!
-    @IBOutlet weak var centerView: UIView!
-    @IBOutlet weak var rightView: UIView!
+    @IBOutlet weak var leftBannerButton: CustomView!
+    @IBOutlet weak var centerBannerButton: CustomView!
+    @IBOutlet weak var rightBannerButton: CustomView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
