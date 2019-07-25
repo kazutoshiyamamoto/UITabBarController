@@ -30,7 +30,7 @@
                                 <cells/>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xeA-pf-Ngq">
-                                <rect key="frame" x="918" y="238" width="39" height="15"/>
+                                <rect key="frame" x="0.0" y="238" width="1125" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="AtS-yq-I4y"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCf-Di-Mrl" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
                                         <rect key="frame" x="375" y="0.0" width="375" height="150"/>
-                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axT-ve-Nwo" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
                                         <rect key="frame" x="750" y="0.0" width="375" height="150"/>
@@ -81,12 +81,13 @@
                             <constraint firstItem="8zo-oo-uM3" firstAttribute="bottom" secondItem="ejj-3i-j2n" secondAttribute="bottom" id="3JQ-IK-etN"/>
                             <constraint firstItem="8zo-oo-uM3" firstAttribute="top" secondItem="xeA-pf-Ngq" secondAttribute="bottom" constant="1" id="56P-3R-JSf"/>
                             <constraint firstItem="BRv-TP-4i0" firstAttribute="leading" secondItem="ejj-3i-j2n" secondAttribute="leading" id="788-Fw-CpN"/>
+                            <constraint firstItem="xeA-pf-Ngq" firstAttribute="leading" secondItem="ejj-3i-j2n" secondAttribute="leading" id="8Fd-dD-vZq"/>
                             <constraint firstItem="BRv-TP-4i0" firstAttribute="top" secondItem="ejj-3i-j2n" secondAttribute="top" id="CZo-ep-EHk"/>
                             <constraint firstItem="xeA-pf-Ngq" firstAttribute="top" secondItem="mEI-9x-Tae" secondAttribute="bottom" id="K1W-tj-UrR"/>
                             <constraint firstItem="ZCf-Di-Mrl" firstAttribute="width" secondItem="BRv-TP-4i0" secondAttribute="width" id="Mnu-K4-YKz"/>
                             <constraint firstItem="xeA-pf-Ngq" firstAttribute="top" secondItem="BRv-TP-4i0" secondAttribute="bottom" id="Mvj-lQ-i92"/>
                             <constraint firstItem="BRv-TP-4i0" firstAttribute="width" secondItem="tPH-th-8Ne" secondAttribute="width" priority="750" id="Q8J-iy-ewx"/>
-                            <constraint firstItem="ejj-3i-j2n" firstAttribute="trailing" secondItem="xeA-pf-Ngq" secondAttribute="trailing" constant="168" id="ggv-Qr-TNQ"/>
+                            <constraint firstItem="ejj-3i-j2n" firstAttribute="trailing" secondItem="xeA-pf-Ngq" secondAttribute="trailing" id="ggv-Qr-TNQ"/>
                             <constraint firstItem="mEI-9x-Tae" firstAttribute="top" secondItem="ejj-3i-j2n" secondAttribute="top" id="or1-MN-yWg"/>
                             <constraint firstItem="mEI-9x-Tae" firstAttribute="trailing" secondItem="ejj-3i-j2n" secondAttribute="trailing" id="sDB-C2-XQY"/>
                             <constraint firstItem="axT-ve-Nwo" firstAttribute="height" secondItem="BRv-TP-4i0" secondAttribute="height" id="ttR-6d-Mtg"/>
