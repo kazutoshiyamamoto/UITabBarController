@@ -8,6 +8,30 @@
 
 import UIKit
 
+enum MenuCellType: Int {
+    case First = 0
+    case Second
+    case Third
+    
+    enum FirstItems: Int {
+        case First = 0
+        case Second
+        case Third
+    }
+    
+    enum SecondItems: Int {
+        case First = 0
+        case Second
+        case Third
+    }
+    
+    enum ThirdItems: Int {
+        case First = 0
+        case Second
+        case Third
+    }
+}
+
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -17,12 +41,15 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let menu = Menu()
     private let banner = Banner()
+    
+    let sectionName = [["Section1"], ["Section2"], ["Section3"]]
+    let data = [["item1", "item2", "item3"], ["item4", "item5", "item6"], ["item7", "item8", "item9"]]
+    let photo = [["photo1", "photo2", "photo3"], ["photo4", "photo5", "photo6"], ["photo7", "photo8", "photo9"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.scrollView.contentSize = CGSize(width: self.view.frame.width * 3, height: self.scrollView.frame.height)
+        //        self.scrollView.contentSize = CGSize(width: self.view.frame.width * 3, height: self.scrollView.frame.height)
         
         self.scrollView.delegate = self
         
@@ -30,15 +57,14 @@ class FirstViewController: UIViewController {
         self.collectionView.register(UINib(nibName: "CollectionViewHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
         
         self.collectionView.delegate = self
-        self.collectionView.dataSource = self.menu
+        self.collectionView.dataSource = self
         
-//        self.setUpButtons()
+        //        self.setUpButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setUpButtonImage()
-        
         // タイマーを作成
         self.banner.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
     }
@@ -55,51 +81,54 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-//    private func setUpButtons() {
-//        for i in 0 ..< 3 {
-//            let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
-//            button.frame = CGRect(origin: CGPoint(x: self.view.frame.size.width * CGFloat(i), y: 0), size: CGSize(width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
-//            button.tag += i
-//            button.imageView?.contentMode = .scaleAspectFill
-//            button.addTarget(self, action: #selector(transitionDetail), for: UIControl.Event.touchUpInside)
-//            self.scrollView.addSubview(button)
-//            self.banner.buttons.append(button)
-//        }
-//    }
+    //    private func setUpButtons() {
+    //        for i in 0 ..< 3 {
+    //            let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
+    //            button.frame = CGRect(origin: CGPoint(x: self.view.frame.size.width * CGFloat(i), y: 0), size: CGSize(width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
+    //            button.tag += i
+    //            button.imageView?.contentMode = .scaleAspectFill
+    //            button.addTarget(self, action: #selector(transitionDetail), for: UIControl.Event.touchUpInside)
+    //            self.scrollView.addSubview(button)
+    //            self.banner.buttons.append(button)
+    //        }
+    //    }
     
     private func setUpButtonImage() {
         let imageDownload = ImageDownload()
         imageDownload.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+            self.leftBannerButton.removeButtonImage()
             self.leftBannerButton.bannerButton.setImage(image, for: .normal)
         })
         
         imageDownload.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+            self.centerBannerButton.removeButtonImage()
             self.centerBannerButton.bannerButton.setImage(image, for: .normal)
         })
         
         imageDownload.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+            self.rightBannerButton.removeButtonImage()
             self.rightBannerButton.bannerButton.setImage(image, for: .normal)
         })
     }
     
-//    @objc private func transitionDetail(_ sender: UIButton) {
-//        enum ButtonTag: Int {
-//            case first = 0
-//            case second
-//            case third
-//        }
-//
-//        if let buttonTag = ButtonTag(rawValue: sender.tag) {
-//            switch buttonTag {
-//            case .first:
-//                print("ボタン1")
-//            case .second:
-//                print("ボタン2")
-//            case .third:
-//                print("ボタン3")
-//            }
-//        }
-//    }
+    //    @objc private func transitionDetail(_ sender: UIButton) {
+    //        enum ButtonTag: Int {
+    //            case first = 0
+    //            case second
+    //            case third
+    //        }
+    //
+    //        if let buttonTag = ButtonTag(rawValue: sender.tag) {
+    //            switch buttonTag {
+    //            case .first:
+    //                print("ボタン1")
+    //            case .second:
+    //                print("ボタン2")
+    //            case .third:
+    //                print("ボタン3")
+    //            }
+    //        }
+    //    }
     
     // offsetXの値を更新することページを移動
     @objc private func scrollPage() {
@@ -125,25 +154,25 @@ extension FirstViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (MenuCellType.First.rawValue, MenuCellType.FirstItems.First.rawValue):
-            print(self.menu.data[indexPath.section][indexPath.row])
+            print(self.data[indexPath.section][indexPath.row])
         case (MenuCellType.First.rawValue, MenuCellType.FirstItems.Second.rawValue):
-            print(self.menu.data[indexPath.section][indexPath.row])
+            print(self.data[indexPath.section][indexPath.row])
         case (MenuCellType.First.rawValue, MenuCellType.FirstItems.Third.rawValue):
-            print(self.menu.data[indexPath.section][indexPath.row])
+            print(self.data[indexPath.section][indexPath.row])
             
         case (MenuCellType.Second.rawValue, MenuCellType.SecondItems.First.rawValue):
-            print(self.menu.data[indexPath.section][indexPath.row])
+            print(self.data[indexPath.section][indexPath.row])
         case (MenuCellType.Second.rawValue, MenuCellType.SecondItems.Second.rawValue):
-            print(self.menu.data[indexPath.section][indexPath.row])
+            print(self.data[indexPath.section][indexPath.row])
         case (MenuCellType.Second.rawValue, MenuCellType.SecondItems.Third.rawValue):
-            print(self.menu.data[indexPath.section][indexPath.row])
+            print(self.data[indexPath.section][indexPath.row])
             
         case (MenuCellType.Third.rawValue, MenuCellType.ThirdItems.First.rawValue):
-            print(self.menu.data[indexPath.section][indexPath.row])
+            print(self.data[indexPath.section][indexPath.row])
         case (MenuCellType.Third.rawValue, MenuCellType.ThirdItems.Second.rawValue):
-            print(self.menu.data[indexPath.section][indexPath.row])
+            print(self.data[indexPath.section][indexPath.row])
         case (MenuCellType.Third.rawValue, MenuCellType.ThirdItems.Third.rawValue):
-            print(self.menu.data[indexPath.section][indexPath.row])
+            print(self.data[indexPath.section][indexPath.row])
             
         default:
             print("テスト")
@@ -164,6 +193,36 @@ extension FirstViewController:  UICollectionViewDelegateFlowLayout {
     // ヘッダーのサイズ
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height: 50)
+    }
+}
+
+extension FirstViewController: UICollectionViewDataSource {
+    // セルの数を返す
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.data[section].count
+    }
+    
+    // ヘッダーの数
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return self.sectionName.count
+    }
+    
+    // セルの設定
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        let cellImage = UIImage(named: self.photo[indexPath.section][indexPath.item])!
+        let cellText = self.data[indexPath.section][indexPath.item]
+        cell.setUpContents(image: cellImage,textName: cellText)
+        
+        return cell
+    }
+    
+    // ヘッダーの設定
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let collectionViewHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! CollectionViewHeader
+        let headerText = self.sectionName[indexPath.section][indexPath.item]
+        collectionViewHeader.setUpContents(titleText: headerText)
+        return collectionViewHeader
     }
 }
 

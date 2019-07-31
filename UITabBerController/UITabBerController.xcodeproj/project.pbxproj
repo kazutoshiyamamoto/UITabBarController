@@ -10,7 +10,6 @@
 		FD0EF4BA22E8A77800F574ED /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF4B922E8A77800F574ED /* CustomView.xib */; };
 		FD0EF4BC22E8A82400F574ED /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0EF4BB22E8A82400F574ED /* CustomView.swift */; };
 		FD1C34E022C11F3A00C3B8EE /* WebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */; };
-		FD1C34E422C39DC400C3B8EE /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34E322C39DC400C3B8EE /* Menu.swift */; };
 		FD1C34E622C39DD800C3B8EE /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34E522C39DD700C3B8EE /* List.swift */; };
 		FD1C34E822D390BE00C3B8EE /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34E722D390BE00C3B8EE /* Banner.swift */; };
 		FD1C34ED22DDFE7400C3B8EE /* ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34EC22DDFE7400C3B8EE /* ImageDownload.swift */; };
@@ -34,7 +33,6 @@
 		FD0EF4B922E8A77800F574ED /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		FD0EF4BB22E8A82400F574ED /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApi.swift; sourceTree = "<group>"; };
-		FD1C34E322C39DC400C3B8EE /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		FD1C34E522C39DD700C3B8EE /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		FD1C34E722D390BE00C3B8EE /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		FD1C34EC22DDFE7400C3B8EE /* ImageDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownload.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				FD1C34E922DDFD4F00C3B8EE /* Network */,
-				FD1C34E322C39DC400C3B8EE /* Menu.swift */,
 				FD1C34E722D390BE00C3B8EE /* Banner.swift */,
 				FD1C34E522C39DD700C3B8EE /* List.swift */,
 			);
@@ -261,7 +258,6 @@
 				FD9C74C422ABC45F00F58E5C /* CollectionViewHeader.swift in Sources */,
 				FD1C34ED22DDFE7400C3B8EE /* ImageDownload.swift in Sources */,
 				FD0EF4BC22E8A82400F574ED /* CustomView.swift in Sources */,
-				FD1C34E422C39DC400C3B8EE /* Menu.swift in Sources */,
 				FD96C3CC206F24AF0013BF37 /* SecondViewController.swift in Sources */,
 				FD1C34EF22DE02F400C3B8EE /* Service.swift in Sources */,
 				FD96C3C8206F24AF0013BF37 /* AppDelegate.swift in Sources */,

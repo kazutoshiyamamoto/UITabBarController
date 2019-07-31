@@ -47,15 +47,15 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEI-9x-Tae">
                                 <rect key="frame" x="0.0" y="88" width="1125" height="150"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64U-2o-hcm" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
+                                    <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="64U-2o-hcm" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         <color key="backgroundColor" red="0.1137254902" green="0.91372549020000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCf-Di-Mrl" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
+                                    <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCf-Di-Mrl" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
                                         <rect key="frame" x="375" y="0.0" width="375" height="150"/>
                                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axT-ve-Nwo" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
+                                    <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="axT-ve-Nwo" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
                                         <rect key="frame" x="750" y="0.0" width="375" height="150"/>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
