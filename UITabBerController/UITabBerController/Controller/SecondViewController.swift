@@ -12,12 +12,14 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let list = List()
+    // テーブルビューに表示するデータ
+    private let sectionTitle = ["Section1"]
+    private var items: [ListItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
-        self.tableView.dataSource = self.list
+        self.tableView.dataSource = self
         
         self.setUpTableItems()
     }
@@ -28,7 +30,7 @@ class SecondViewController: UIViewController {
     
     private func setUpTableItems() {
         Service().getTableItems(completionHandler: { (items) in
-            self.list.items = items
+            self.items = items
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -39,6 +41,30 @@ class SecondViewController: UIViewController {
 extension SecondViewController: UITableViewDelegate {
     // セル選択時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.list.items[indexPath.row].title)
+        print(self.items[indexPath.row].title)
+    }
+}
+
+extension SecondViewController: UITableViewDataSource {
+    // セクション数
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionTitle.count
+    }
+    
+    // 各セクションのタイトル
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitle[section]
+    }
+    
+    // セル設定
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        cell.textLabel?.text = items[indexPath.row].title
+        return cell
+    }
+    
+    // セルの行数
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
     }
 }
