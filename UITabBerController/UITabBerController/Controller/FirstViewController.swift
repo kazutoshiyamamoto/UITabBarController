@@ -41,11 +41,17 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let banner = Banner()
-    
     let sectionName = [["Section1"], ["Section2"], ["Section3"]]
     let data = [["item1", "item2", "item3"], ["item4", "item5", "item6"], ["item7", "item8", "item9"]]
     let photo = [["photo1", "photo2", "photo3"], ["photo4", "photo5", "photo6"], ["photo7", "photo8", "photo9"]]
+    
+    private var buttons: [UIButton] = []
+    private var offsetX: CGFloat = 0
+    private var timer: Timer!
+    
+    let firstButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220300.jpg"
+    let secondButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220253.jpg"
+    let thirdButtonImageUrl = "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hfoasi8fje3/20190608/20190608220248.jpg"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,13 +72,13 @@ class FirstViewController: UIViewController {
         super.viewWillAppear(animated)
         self.setUpButtonImage()
         // タイマーを作成
-        self.banner.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // タイマーを破棄
-        if let workingTimer = self.banner.timer {
+        if let workingTimer = self.timer {
             workingTimer.invalidate()
         }
     }
@@ -95,17 +101,17 @@ class FirstViewController: UIViewController {
     
     private func setUpButtonImage() {
         let imageDownload = ImageDownload()
-        imageDownload.loadButtonImage(url: self.banner.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        imageDownload.loadButtonImage(url: self.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.leftBannerButton.removeButtonImage()
             self.leftBannerButton.bannerButton.setImage(image, for: .normal)
         })
         
-        imageDownload.loadButtonImage(url: self.banner.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        imageDownload.loadButtonImage(url: self.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.centerBannerButton.removeButtonImage()
             self.centerBannerButton.bannerButton.setImage(image, for: .normal)
         })
         
-        imageDownload.loadButtonImage(url: self.banner.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        imageDownload.loadButtonImage(url: self.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.rightBannerButton.removeButtonImage()
             self.rightBannerButton.bannerButton.setImage(image, for: .normal)
         })
@@ -133,16 +139,16 @@ class FirstViewController: UIViewController {
     // offsetXの値を更新することページを移動
     @objc private func scrollPage() {
         // 画面の幅分offsetXを移動
-        self.banner.offsetX += self.view.frame.size.width
+        self.offsetX += self.view.frame.size.width
         // 3ページ目まで移動したら1ページ目まで戻る
-        if self.banner.offsetX < self.view.frame.size.width * 3 {
+        if self.offsetX < self.view.frame.size.width * 3 {
             UIView.animate(withDuration: 0.2) {
-                self.scrollView.contentOffset.x = self.banner.offsetX
+                self.scrollView.contentOffset.x = self.offsetX
             }
         } else {
             UIView.animate(withDuration: 0.2) {
-                self.banner.offsetX = 0
-                self.scrollView.contentOffset.x = self.banner.offsetX
+                self.offsetX = 0
+                self.scrollView.contentOffset.x = self.offsetX
             }
         }
     }
@@ -185,7 +191,7 @@ extension FirstViewController: UIScrollViewDelegate {
         // scrollViewのページ移動に合わせてpageControlの表示も移動
         self.pageControl.currentPage = Int(self.scrollView.contentOffset.x / self.scrollView.frame.size.width)
         // offsetXの値を更新
-        self.banner.offsetX = self.scrollView.contentOffset.x
+        self.offsetX = self.scrollView.contentOffset.x
     }
 }
 
