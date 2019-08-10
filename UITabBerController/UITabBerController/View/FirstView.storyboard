@@ -37,66 +37,25 @@
                                 <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRv-TP-4i0">
-                                <rect key="frame" x="0.0" y="88" width="375" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" placeholder="YES" id="97w-o7-xrs"/>
-                                    <constraint firstAttribute="height" constant="150" id="sQc-d2-Lep"/>
-                                </constraints>
-                            </containerView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEI-9x-Tae">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEI-9x-Tae">
                                 <rect key="frame" x="0.0" y="88" width="1125" height="150"/>
-                                <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="64U-2o-hcm" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                                        <color key="backgroundColor" red="0.1137254902" green="0.91372549020000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCf-Di-Mrl" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
-                                        <rect key="frame" x="375" y="0.0" width="375" height="150"/>
-                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="axT-ve-Nwo" customClass="CustomView" customModule="UITabBerController" customModuleProvider="target">
-                                        <rect key="frame" x="750" y="0.0" width="375" height="150"/>
-                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="axT-ve-Nwo" secondAttribute="bottom" id="06K-Z9-mn3"/>
-                                    <constraint firstItem="ZCf-Di-Mrl" firstAttribute="leading" secondItem="64U-2o-hcm" secondAttribute="trailing" id="0Th-ey-XRA"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZCf-Di-Mrl" secondAttribute="bottom" id="N3p-Zh-QkB"/>
-                                    <constraint firstAttribute="trailing" secondItem="axT-ve-Nwo" secondAttribute="trailing" id="Rmk-QV-76t"/>
-                                    <constraint firstAttribute="height" constant="150" id="SnW-5O-sjM"/>
-                                    <constraint firstAttribute="bottom" secondItem="64U-2o-hcm" secondAttribute="bottom" id="bHe-vw-7lh"/>
-                                    <constraint firstItem="64U-2o-hcm" firstAttribute="top" secondItem="mEI-9x-Tae" secondAttribute="top" id="dDO-yv-jvV"/>
-                                    <constraint firstItem="axT-ve-Nwo" firstAttribute="leading" secondItem="ZCf-Di-Mrl" secondAttribute="trailing" id="dow-PA-Ivr"/>
-                                    <constraint firstItem="ZCf-Di-Mrl" firstAttribute="top" secondItem="mEI-9x-Tae" secondAttribute="top" id="tzr-M5-ULm"/>
-                                    <constraint firstItem="64U-2o-hcm" firstAttribute="leading" secondItem="mEI-9x-Tae" secondAttribute="leading" id="uJ2-Xu-Azq"/>
-                                    <constraint firstItem="axT-ve-Nwo" firstAttribute="top" secondItem="mEI-9x-Tae" secondAttribute="top" id="vBP-g1-WFZ"/>
+                                    <constraint firstAttribute="height" constant="150" id="kwd-ff-e5v"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8zo-oo-uM3" firstAttribute="leading" secondItem="ejj-3i-j2n" secondAttribute="leading" id="05T-gt-LPc"/>
-                            <constraint firstItem="mEI-9x-Tae" firstAttribute="leading" secondItem="ejj-3i-j2n" secondAttribute="leading" id="2Do-Xa-GT7"/>
                             <constraint firstItem="8zo-oo-uM3" firstAttribute="bottom" secondItem="ejj-3i-j2n" secondAttribute="bottom" id="3JQ-IK-etN"/>
                             <constraint firstItem="8zo-oo-uM3" firstAttribute="top" secondItem="xeA-pf-Ngq" secondAttribute="bottom" constant="1" id="56P-3R-JSf"/>
-                            <constraint firstItem="BRv-TP-4i0" firstAttribute="leading" secondItem="ejj-3i-j2n" secondAttribute="leading" id="788-Fw-CpN"/>
                             <constraint firstItem="xeA-pf-Ngq" firstAttribute="leading" secondItem="ejj-3i-j2n" secondAttribute="leading" id="8Fd-dD-vZq"/>
-                            <constraint firstItem="BRv-TP-4i0" firstAttribute="top" secondItem="ejj-3i-j2n" secondAttribute="top" id="CZo-ep-EHk"/>
-                            <constraint firstItem="xeA-pf-Ngq" firstAttribute="top" secondItem="mEI-9x-Tae" secondAttribute="bottom" id="K1W-tj-UrR"/>
-                            <constraint firstItem="ZCf-Di-Mrl" firstAttribute="width" secondItem="BRv-TP-4i0" secondAttribute="width" id="Mnu-K4-YKz"/>
-                            <constraint firstItem="xeA-pf-Ngq" firstAttribute="top" secondItem="BRv-TP-4i0" secondAttribute="bottom" id="Mvj-lQ-i92"/>
-                            <constraint firstItem="BRv-TP-4i0" firstAttribute="width" secondItem="tPH-th-8Ne" secondAttribute="width" priority="750" id="Q8J-iy-ewx"/>
+                            <constraint firstItem="mEI-9x-Tae" firstAttribute="top" secondItem="ejj-3i-j2n" secondAttribute="top" id="Aur-Aw-3E8"/>
+                            <constraint firstItem="mEI-9x-Tae" firstAttribute="leading" secondItem="ejj-3i-j2n" secondAttribute="leading" id="IDO-cV-z9Z"/>
                             <constraint firstItem="ejj-3i-j2n" firstAttribute="trailing" secondItem="xeA-pf-Ngq" secondAttribute="trailing" id="ggv-Qr-TNQ"/>
-                            <constraint firstItem="mEI-9x-Tae" firstAttribute="top" secondItem="ejj-3i-j2n" secondAttribute="top" id="or1-MN-yWg"/>
-                            <constraint firstItem="mEI-9x-Tae" firstAttribute="trailing" secondItem="ejj-3i-j2n" secondAttribute="trailing" id="sDB-C2-XQY"/>
-                            <constraint firstItem="axT-ve-Nwo" firstAttribute="height" secondItem="BRv-TP-4i0" secondAttribute="height" id="ttR-6d-Mtg"/>
-                            <constraint firstItem="64U-2o-hcm" firstAttribute="height" secondItem="BRv-TP-4i0" secondAttribute="height" id="uVj-eF-n1M"/>
-                            <constraint firstItem="ZCf-Di-Mrl" firstAttribute="height" secondItem="BRv-TP-4i0" secondAttribute="height" id="v8Q-hQ-bwI"/>
+                            <constraint firstItem="xeA-pf-Ngq" firstAttribute="top" secondItem="mEI-9x-Tae" secondAttribute="bottom" id="mpb-71-ppE"/>
+                            <constraint firstItem="mEI-9x-Tae" firstAttribute="trailing" secondItem="ejj-3i-j2n" secondAttribute="trailing" id="sJf-i8-FLC"/>
                             <constraint firstItem="8zo-oo-uM3" firstAttribute="trailing" secondItem="ejj-3i-j2n" secondAttribute="trailing" id="vsl-Cb-pNN"/>
-                            <constraint firstItem="axT-ve-Nwo" firstAttribute="width" secondItem="BRv-TP-4i0" secondAttribute="width" id="w8m-Nz-qCa"/>
-                            <constraint firstItem="64U-2o-hcm" firstAttribute="width" secondItem="BRv-TP-4i0" secondAttribute="width" id="zvk-Qd-T6Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ejj-3i-j2n"/>
                     </view>
@@ -104,11 +63,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="1125" height="812"/>
                     <connections>
-                        <outlet property="centerBannerButton" destination="ZCf-Di-Mrl" id="4Fh-wK-VhN"/>
                         <outlet property="collectionView" destination="8zo-oo-uM3" id="tcU-D9-6kC"/>
-                        <outlet property="leftBannerButton" destination="64U-2o-hcm" id="OZ1-zL-1M0"/>
                         <outlet property="pageControl" destination="xeA-pf-Ngq" id="eek-V0-FbL"/>
-                        <outlet property="rightBannerButton" destination="axT-ve-Nwo" id="4QN-pO-bV2"/>
                         <outlet property="scrollView" destination="mEI-9x-Tae" id="IqQ-2Z-1HI"/>
                     </connections>
                 </viewController>
