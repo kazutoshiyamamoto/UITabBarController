@@ -43,21 +43,21 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CL-Qi-x57">
                                         <rect key="frame" x="0.0" y="0.0" width="3375" height="150"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz4-6c-ZL9">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz4-6c-ZL9">
                                                 <rect key="frame" x="0.0" y="0.0" width="1125" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="leftButtonTapped:" destination="d6o-UJ-NUa" eventType="touchUpInside" id="T1i-E4-ZYV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DZ-HI-6yo">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DZ-HI-6yo">
                                                 <rect key="frame" x="2250" y="0.0" width="1125" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="rightButtonTapped:" destination="d6o-UJ-NUa" eventType="touchUpInside" id="EOj-Vk-qaC"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-Zz-2IS">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-Zz-2IS">
                                                 <rect key="frame" x="1125" y="0.0" width="1125" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
