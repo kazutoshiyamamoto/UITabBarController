@@ -35,9 +35,9 @@ enum MenuCellType: Int {
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var leftBannerButton: CustomView!
-    @IBOutlet weak var centerBannerButton: CustomView!
-    @IBOutlet weak var rightBannerButton: CustomView!
+    @IBOutlet weak var leftBannerButton: UIButton!
+    @IBOutlet weak var centerBannerButton: UIButton!
+    @IBOutlet weak var rightBannerButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     

@@ -103,8 +103,11 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="1125" height="812"/>
                     <connections>
+                        <outlet property="centerBannerButton" destination="4a2-Zz-2IS" id="to6-ca-3rc"/>
                         <outlet property="collectionView" destination="8zo-oo-uM3" id="tcU-D9-6kC"/>
+                        <outlet property="leftBannerButton" destination="Bz4-6c-ZL9" id="FrD-pF-CYC"/>
                         <outlet property="pageControl" destination="xeA-pf-Ngq" id="eek-V0-FbL"/>
+                        <outlet property="rightBannerButton" destination="0DZ-HI-6yo" id="gVA-eK-gub"/>
                         <outlet property="scrollView" destination="mEI-9x-Tae" id="IqQ-2Z-1HI"/>
                     </connections>
                 </viewController>
