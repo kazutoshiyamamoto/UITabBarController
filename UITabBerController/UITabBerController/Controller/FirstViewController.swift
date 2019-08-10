@@ -45,7 +45,6 @@ class FirstViewController: UIViewController {
     let data = [["item1", "item2", "item3"], ["item4", "item5", "item6"], ["item7", "item8", "item9"]]
     let photo = [["photo1", "photo2", "photo3"], ["photo4", "photo5", "photo6"], ["photo7", "photo8", "photo9"]]
     
-    private var buttons: [UIButton] = []
     private var offsetX: CGFloat = 0
     private var timer: Timer!
     
@@ -55,8 +54,6 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        self.scrollView.contentSize = CGSize(width: self.view.frame.width * 3, height: self.scrollView.frame.height)
-        
         self.scrollView.delegate = self
         
         self.collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
@@ -64,8 +61,6 @@ class FirstViewController: UIViewController {
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        
-        //        self.setUpButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,18 +81,6 @@ class FirstViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    //    private func setUpButtons() {
-    //        for i in 0 ..< 3 {
-    //            let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
-    //            button.frame = CGRect(origin: CGPoint(x: self.view.frame.size.width * CGFloat(i), y: 0), size: CGSize(width: self.view.frame.size.width, height: self.scrollView.frame.size.height))
-    //            button.tag += i
-    //            button.imageView?.contentMode = .scaleAspectFill
-    //            button.addTarget(self, action: #selector(transitionDetail), for: UIControl.Event.touchUpInside)
-    //            self.scrollView.addSubview(button)
-    //            self.banner.buttons.append(button)
-    //        }
-    //    }
     
     private func setUpButtonImage() {
         let imageDownload = ImageDownload()
@@ -126,26 +109,6 @@ class FirstViewController: UIViewController {
     @IBAction func rightButtonTapped(_ sender: Any) {
         print("ボタン3")
     }
-    
-    
-    //    @objc private func transitionDetail(_ sender: UIButton) {
-    //        enum ButtonTag: Int {
-    //            case first = 0
-    //            case second
-    //            case third
-    //        }
-    //
-    //        if let buttonTag = ButtonTag(rawValue: sender.tag) {
-    //            switch buttonTag {
-    //            case .first:
-    //                print("ボタン1")
-    //            case .second:
-    //                print("ボタン2")
-    //            case .third:
-    //                print("ボタン3")
-    //            }
-    //        }
-    //    }
     
     // offsetXの値を更新することページを移動
     @objc private func scrollPage() {
