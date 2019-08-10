@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="d6o-UJ-NUa" customClass="FirstViewController" customModule="UITabBerController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tPH-th-8Ne">
-                        <rect key="frame" x="0.0" y="0.0" width="1125" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8zo-oo-uM3">
-                                <rect key="frame" x="0.0" y="254" width="1125" height="475"/>
+                                <rect key="frame" x="0.0" y="254" width="375" height="475"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="20" id="g9j-w5-zEd">
                                     <size key="itemSize" width="80" height="80"/>
@@ -30,7 +30,7 @@
                                 <cells/>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xeA-pf-Ngq">
-                                <rect key="frame" x="0.0" y="238" width="1125" height="15"/>
+                                <rect key="frame" x="0.0" y="238" width="375" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="AtS-yq-I4y"/>
                                 </constraints>
@@ -38,27 +38,27 @@
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEI-9x-Tae">
-                                <rect key="frame" x="0.0" y="88" width="1125" height="150"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CL-Qi-x57">
-                                        <rect key="frame" x="0.0" y="0.0" width="3375" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="150"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz4-6c-ZL9">
-                                                <rect key="frame" x="0.0" y="0.0" width="1125" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="leftButtonTapped:" destination="d6o-UJ-NUa" eventType="touchUpInside" id="T1i-E4-ZYV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DZ-HI-6yo">
-                                                <rect key="frame" x="2250" y="0.0" width="1125" height="150"/>
+                                                <rect key="frame" x="750" y="0.0" width="375" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="rightButtonTapped:" destination="d6o-UJ-NUa" eventType="touchUpInside" id="EOj-Vk-qaC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-Zz-2IS">
-                                                <rect key="frame" x="1125" y="0.0" width="1125" height="150"/>
+                                                <rect key="frame" x="375" y="0.0" width="375" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="centerButtonTapped:" destination="d6o-UJ-NUa" eventType="touchUpInside" id="fUo-9R-1gM"/>
@@ -110,7 +110,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="FirstView" id="l0d-uK-okZ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="1125" height="812"/>
                     <connections>
                         <outlet property="centerBannerButton" destination="4a2-Zz-2IS" id="to6-ca-3rc"/>
                         <outlet property="collectionView" destination="8zo-oo-uM3" id="tcU-D9-6kC"/>
@@ -122,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOs-CT-FH3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250.4000000000001" y="-320.68965517241378"/>
+            <point key="canvasLocation" x="1790" y="-321"/>
         </scene>
         <!--First-->
         <scene sceneID="xtp-Yw-3dd">
