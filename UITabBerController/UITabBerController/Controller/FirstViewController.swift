@@ -67,7 +67,7 @@ class FirstViewController: UIViewController {
         super.viewWillAppear(animated)
         self.setUpButtonImage()
         // タイマーを作成
-//        self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.scrollPage), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
