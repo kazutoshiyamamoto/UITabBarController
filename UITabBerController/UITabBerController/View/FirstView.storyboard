@@ -65,6 +65,7 @@
                                     <constraint firstItem="ZCf-Di-Mrl" firstAttribute="leading" secondItem="64U-2o-hcm" secondAttribute="trailing" id="0Th-ey-XRA"/>
                                     <constraint firstAttribute="bottom" secondItem="ZCf-Di-Mrl" secondAttribute="bottom" id="N3p-Zh-QkB"/>
                                     <constraint firstAttribute="trailing" secondItem="axT-ve-Nwo" secondAttribute="trailing" id="Rmk-QV-76t"/>
+                                    <constraint firstAttribute="height" constant="150" id="SnW-5O-sjM"/>
                                     <constraint firstAttribute="bottom" secondItem="64U-2o-hcm" secondAttribute="bottom" id="bHe-vw-7lh"/>
                                     <constraint firstItem="64U-2o-hcm" firstAttribute="top" secondItem="mEI-9x-Tae" secondAttribute="top" id="dDO-yv-jvV"/>
                                     <constraint firstItem="axT-ve-Nwo" firstAttribute="leading" secondItem="ZCf-Di-Mrl" secondAttribute="trailing" id="dow-PA-Ivr"/>
