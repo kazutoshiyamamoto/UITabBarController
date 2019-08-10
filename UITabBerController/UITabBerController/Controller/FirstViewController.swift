@@ -102,20 +102,31 @@ class FirstViewController: UIViewController {
     private func setUpButtonImage() {
         let imageDownload = ImageDownload()
         imageDownload.loadButtonImage(url: self.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
-            self.leftBannerButton.removeButtonImage()
-            self.leftBannerButton.bannerButton.setImage(image, for: .normal)
+            self.leftBannerButton.setImage(image, for: .normal)
         })
         
         imageDownload.loadButtonImage(url: self.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
-            self.centerBannerButton.removeButtonImage()
-            self.centerBannerButton.bannerButton.setImage(image, for: .normal)
+            self.centerBannerButton.setImage(image, for: .normal)
         })
         
         imageDownload.loadButtonImage(url: self.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
-            self.rightBannerButton.removeButtonImage()
-            self.rightBannerButton.bannerButton.setImage(image, for: .normal)
+            self.rightBannerButton.setImage(image, for: .normal)
         })
     }
+    
+    @IBAction func leftButtonTapped(_ sender: Any) {
+        print("ボタン1")
+    }
+    
+    
+    @IBAction func centerButtonTapped(_ sender: Any) {
+        print("ボタン2")
+    }
+    
+    @IBAction func rightButtonTapped(_ sender: Any) {
+        print("ボタン2")
+    }
+    
     
     //    @objc private func transitionDetail(_ sender: UIButton) {
     //        enum ButtonTag: Int {
