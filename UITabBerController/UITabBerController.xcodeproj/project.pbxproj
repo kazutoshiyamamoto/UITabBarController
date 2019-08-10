@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD0EF4BA22E8A77800F574ED /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF4B922E8A77800F574ED /* CustomView.xib */; };
-		FD0EF4BC22E8A82400F574ED /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0EF4BB22E8A82400F574ED /* CustomView.swift */; };
 		FD1C34E022C11F3A00C3B8EE /* WebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */; };
 		FD1C34ED22DDFE7400C3B8EE /* ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34EC22DDFE7400C3B8EE /* ImageDownload.swift */; };
 		FD1C34EF22DE02F400C3B8EE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34EE22DE02F400C3B8EE /* Service.swift */; };
@@ -28,8 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FD0EF4B922E8A77800F574ED /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
-		FD0EF4BB22E8A82400F574ED /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApi.swift; sourceTree = "<group>"; };
 		FD1C34EC22DDFE7400C3B8EE /* ImageDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownload.swift; sourceTree = "<group>"; };
 		FD1C34EE22DE02F400C3B8EE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -69,8 +65,6 @@
 				FD96C3D2206F24AF0013BF37 /* LaunchScreen.storyboard */,
 				FD96C3CD206F24AF0013BF37 /* Main.storyboard */,
 				FDB1FBFF22BE5318006C2AFD /* FirstView.storyboard */,
-				FD0EF4B922E8A77800F574ED /* CustomView.xib */,
-				FD0EF4BB22E8A82400F574ED /* CustomView.swift */,
 				FDB1FC0122BE54C3006C2AFD /* SecondView.storyboard */,
 			);
 			path = View;
@@ -232,7 +226,6 @@
 				FD96C3D4206F24AF0013BF37 /* LaunchScreen.storyboard in Resources */,
 				FD96C3D1206F24AF0013BF37 /* Assets.xcassets in Resources */,
 				FD9C74B922A387DA00F58E5C /* CollectionViewCell.xib in Resources */,
-				FD0EF4BA22E8A77800F574ED /* CustomView.xib in Resources */,
 				FDB1FC0022BE5318006C2AFD /* FirstView.storyboard in Resources */,
 				FD96C3CF206F24AF0013BF37 /* Main.storyboard in Resources */,
 			);
@@ -249,7 +242,6 @@
 				FD1C34E022C11F3A00C3B8EE /* WebApi.swift in Sources */,
 				FD9C74C422ABC45F00F58E5C /* CollectionViewHeader.swift in Sources */,
 				FD1C34ED22DDFE7400C3B8EE /* ImageDownload.swift in Sources */,
-				FD0EF4BC22E8A82400F574ED /* CustomView.swift in Sources */,
 				FD96C3CC206F24AF0013BF37 /* SecondViewController.swift in Sources */,
 				FD1C34EF22DE02F400C3B8EE /* Service.swift in Sources */,
 				FD96C3C8206F24AF0013BF37 /* AppDelegate.swift in Sources */,
