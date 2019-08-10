@@ -41,24 +41,24 @@
                                 <rect key="frame" x="0.0" y="88" width="1125" height="150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CL-Qi-x57">
-                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="3375" height="150"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz4-6c-ZL9">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1125" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="leftButtonTapped:" destination="d6o-UJ-NUa" eventType="touchUpInside" id="T1i-E4-ZYV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DZ-HI-6yo">
-                                                <rect key="frame" x="750" y="0.0" width="375" height="150"/>
+                                                <rect key="frame" x="2250" y="0.0" width="1125" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="rightButtonTapped:" destination="d6o-UJ-NUa" eventType="touchUpInside" id="EOj-Vk-qaC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-Zz-2IS">
-                                                <rect key="frame" x="375" y="0.0" width="375" height="150"/>
+                                                <rect key="frame" x="1125" y="0.0" width="1125" height="150"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="centerButtonTapped:" destination="d6o-UJ-NUa" eventType="touchUpInside" id="fUo-9R-1gM"/>
@@ -85,7 +85,7 @@
                                 <constraints>
                                     <constraint firstItem="7CL-Qi-x57" firstAttribute="height" secondItem="mEI-9x-Tae" secondAttribute="height" id="0Zy-b6-Zfn"/>
                                     <constraint firstItem="7CL-Qi-x57" firstAttribute="top" secondItem="mEI-9x-Tae" secondAttribute="top" id="61e-fl-8Oa"/>
-                                    <constraint firstItem="7CL-Qi-x57" firstAttribute="width" secondItem="mEI-9x-Tae" secondAttribute="width" identifier="3:1" id="Grx-lW-kko"/>
+                                    <constraint firstItem="7CL-Qi-x57" firstAttribute="width" secondItem="mEI-9x-Tae" secondAttribute="width" multiplier="3:1" id="Grx-lW-kko"/>
                                     <constraint firstItem="7CL-Qi-x57" firstAttribute="leading" secondItem="mEI-9x-Tae" secondAttribute="leading" id="Hgd-oO-11X"/>
                                     <constraint firstAttribute="bottom" secondItem="7CL-Qi-x57" secondAttribute="bottom" id="d3F-a3-LW9"/>
                                     <constraint firstAttribute="trailing" secondItem="7CL-Qi-x57" secondAttribute="trailing" id="e1n-QS-Xqm"/>
