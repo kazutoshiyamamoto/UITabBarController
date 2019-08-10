@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ImageDownload: NSObject {
+class ImageDownloadApi: ApiClient {
     func loadButtonImage(url: String, completionHandler: @escaping (_ image: UIImage) -> ()) {
         let configuration = URLSessionConfiguration.default
         configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         configuration.urlCache = nil
         
         if let url = URL(string: url) {
-            WebApi().getAddConfiguration(url: url, configuration: configuration, completionHandler: {(data, response, error) -> Void in
+            self.getAddConfiguration(url: url, configuration: configuration, completionHandler: {(data, response, error) -> Void in
                 if let error = error {
                     print(error.localizedDescription)
                     return

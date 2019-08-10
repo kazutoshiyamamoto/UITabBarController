@@ -83,16 +83,16 @@ class FirstViewController: UIViewController {
     }
     
     private func setUpButtonImage() {
-        let imageDownload = ImageDownload()
-        imageDownload.loadButtonImage(url: self.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        let imageDownloadApi = ImageDownloadApi()
+        imageDownloadApi.loadButtonImage(url: self.firstButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.leftBannerButton.setImage(image, for: .normal)
         })
         
-        imageDownload.loadButtonImage(url: self.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        imageDownloadApi.loadButtonImage(url: self.secondButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.centerBannerButton.setImage(image, for: .normal)
         })
         
-        imageDownload.loadButtonImage(url: self.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
+        imageDownloadApi.loadButtonImage(url: self.thirdButtonImageUrl, completionHandler: { (image: UIImage) -> Void in
             self.rightBannerButton.setImage(image, for: .normal)
         })
     }
@@ -100,7 +100,6 @@ class FirstViewController: UIViewController {
     @IBAction func leftButtonTapped(_ sender: Any) {
         print("ボタン1")
     }
-    
     
     @IBAction func centerButtonTapped(_ sender: Any) {
         print("ボタン2")

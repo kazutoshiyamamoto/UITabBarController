@@ -8,7 +8,13 @@
 
 import UIKit
 
-// ステータスコードなどを実装するクラス
+struct ListItem: Codable {
+    var title: String
+}
+
 class ApiClient: NSObject {
-    
+    func getAddConfiguration(url: URL, configuration: URLSessionConfiguration, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let session = URLSession(configuration: configuration)
+        session.dataTask(with: url, completionHandler: completionHandler).resume()
+    }
 }

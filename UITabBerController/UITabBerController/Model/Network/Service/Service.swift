@@ -13,7 +13,7 @@ class Service: NSObject {
         let configuration = URLSessionConfiguration.default
         
         if let url = URL(string: "http://localhost/test2.php") {
-            WebApi ().getAddConfiguration(url: url, configuration: configuration, completionHandler: {(data, response, error) -> Void in
+            ApiClient().getAddConfiguration(url: url, configuration: configuration, completionHandler: {(data, response, error) -> Void in
                 if let data = data {
                     
                     do {

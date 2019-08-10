@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD1C34E022C11F3A00C3B8EE /* WebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */; };
-		FD1C34ED22DDFE7400C3B8EE /* ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34EC22DDFE7400C3B8EE /* ImageDownload.swift */; };
+		FD1C34ED22DDFE7400C3B8EE /* ImageDownloadApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34EC22DDFE7400C3B8EE /* ImageDownloadApi.swift */; };
 		FD1C34EF22DE02F400C3B8EE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34EE22DE02F400C3B8EE /* Service.swift */; };
 		FD1C34F122DE043F00C3B8EE /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C34F022DE043F00C3B8EE /* ApiClient.swift */; };
 		FD96C3C8206F24AF0013BF37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD96C3C7206F24AF0013BF37 /* AppDelegate.swift */; };
@@ -26,8 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApi.swift; sourceTree = "<group>"; };
-		FD1C34EC22DDFE7400C3B8EE /* ImageDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownload.swift; sourceTree = "<group>"; };
+		FD1C34EC22DDFE7400C3B8EE /* ImageDownloadApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadApi.swift; sourceTree = "<group>"; };
 		FD1C34EE22DE02F400C3B8EE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FD1C34F022DE043F00C3B8EE /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		FD96C3C4206F24AF0013BF37 /* UITabBerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITabBerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				FD1C34EB22DDFDB200C3B8EE /* API */,
+				FDFB25F822FF205000691FE6 /* Service */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -126,9 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FD1C34F022DE043F00C3B8EE /* ApiClient.swift */,
-				FD1C34DF22C11F3A00C3B8EE /* WebApi.swift */,
-				FD1C34EE22DE02F400C3B8EE /* Service.swift */,
-				FD1C34EC22DDFE7400C3B8EE /* ImageDownload.swift */,
+				FD1C34EC22DDFE7400C3B8EE /* ImageDownloadApi.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -159,6 +156,14 @@
 				FD1C34DA22C111C200C3B8EE /* Model */,
 			);
 			path = UITabBerController;
+			sourceTree = "<group>";
+		};
+		FDFB25F822FF205000691FE6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FD1C34EE22DE02F400C3B8EE /* Service.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,9 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9C74B822A387DA00F58E5C /* CollectionViewCell.swift in Sources */,
-				FD1C34E022C11F3A00C3B8EE /* WebApi.swift in Sources */,
 				FD9C74C422ABC45F00F58E5C /* CollectionViewHeader.swift in Sources */,
-				FD1C34ED22DDFE7400C3B8EE /* ImageDownload.swift in Sources */,
+				FD1C34ED22DDFE7400C3B8EE /* ImageDownloadApi.swift in Sources */,
 				FD96C3CC206F24AF0013BF37 /* SecondViewController.swift in Sources */,
 				FD1C34EF22DE02F400C3B8EE /* Service.swift in Sources */,
 				FD96C3C8206F24AF0013BF37 /* AppDelegate.swift in Sources */,
