@@ -49,7 +49,11 @@ class SecondViewController: UIViewController {
 extension SecondViewController: UITableViewDelegate {
     // セル選択時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.items[indexPath.row].title)
+        if self.searchController.isActive {
+            print(self.searchResults[indexPath.row].title)
+        } else {
+            print(self.items[indexPath.row].title)
+        }
     }
 }
 
