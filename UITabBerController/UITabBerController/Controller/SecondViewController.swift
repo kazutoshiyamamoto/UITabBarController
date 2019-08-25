@@ -13,7 +13,6 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // テーブルビューに表示するデータ
-    private let sectionTitle = ["Section1"]
     private var items: [ListItem] = []
     
     private var searchController = UISearchController()
@@ -56,16 +55,6 @@ extension SecondViewController: UITableViewDelegate {
 }
 
 extension SecondViewController: UITableViewDataSource {
-    // セクション数
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionTitle.count
-    }
-    
-    // 各セクションのタイトル
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitle[section]
-    }
-    
     // セル設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
