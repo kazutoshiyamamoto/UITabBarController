@@ -29,7 +29,8 @@ class SecondViewController: UIViewController, UISearchResultsUpdating {
         self.searchController.searchBar.sizeToFit()
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.hidesNavigationBarDuringPresentation = false
-        
+
+        self.tableView.tableHeaderView = self.searchController.searchBar
         
         self.setUpTableItems()
     }
