@@ -24,6 +24,8 @@ class SecondViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        self.searchController = UISearchController(searchResultsController: nil)
+        
         self.setUpTableItems()
     }
     
