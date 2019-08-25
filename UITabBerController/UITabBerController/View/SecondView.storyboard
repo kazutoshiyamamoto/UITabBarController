@@ -32,9 +32,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9za-en-0Kj"/>
                     </view>
-                    <navigationItem key="navigationItem" title="SecondView" id="0pR-8b-YRk"/>
+                    <navigationItem key="navigationItem" title="SecondView" id="cyy-ES-dMb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navigationItem" destination="cyy-ES-dMb" id="2jz-nR-sGU"/>
                         <outlet property="tableView" destination="Mzm-ek-74J" id="Up8-7E-yYv"/>
                     </connections>
                 </viewController>

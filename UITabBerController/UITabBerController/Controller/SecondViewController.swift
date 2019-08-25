@@ -11,7 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
+
     // テーブルビューに表示するデータ
     private var items: [ListItem] = []
     
@@ -25,10 +25,9 @@ class SecondViewController: UIViewController {
         
         self.searchController = UISearchController(searchResultsController: nil)
         self.searchController.searchResultsUpdater = self
-        self.searchController.searchBar.sizeToFit()
         self.searchController.obscuresBackgroundDuringPresentation = false
-        
-        self.tableView.tableHeaderView = self.searchController.searchBar
+        self.navigationItem.searchController = self.searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
         
         self.setUpTableItems()
     }
