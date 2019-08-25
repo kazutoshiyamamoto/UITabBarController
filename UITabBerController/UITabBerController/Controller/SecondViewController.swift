@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UISearchResultsUpdating {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,6 +25,10 @@ class SecondViewController: UIViewController {
         self.tableView.dataSource = self
         
         self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController.searchResultsUpdater = self
+        self.searchController.searchBar.sizeToFit()
+        
+        
         
         self.setUpTableItems()
     }
