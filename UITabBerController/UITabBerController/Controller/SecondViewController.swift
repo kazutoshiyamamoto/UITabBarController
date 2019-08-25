@@ -11,13 +11,13 @@ import UIKit
 class SecondViewController: UIViewController, UISearchResultsUpdating {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    private var searchController = UISearchController()
-    private var searchResults: [String] = []
-    
+
     // テーブルビューに表示するデータ
     private let sectionTitle = ["Section1"]
     private var items: [ListItem] = []
+    
+    private var searchController = UISearchController()
+    private var searchResults: [ListItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,13 +70,17 @@ extension SecondViewController: UITableViewDataSource {
     // セル設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = items[indexPath.row].title
+        if self.searchController.isActive {
+            cell.textLabel?.text = self.searchResults[indexPath.row].title
+        } else {
+            cell.textLabel?.text = items[indexPath.row].title
+        }
         return cell
     }
     
     // セルの行数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.isActive {
+        if self.searchController.isActive {
             return self.searchResults.count
         } else {
             return self.items.count
