@@ -13,6 +13,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var searchController = UISearchController()
+    var searchResults: [String] = []
     
     // テーブルビューに表示するデータ
     private let sectionTitle = ["Section1"]
