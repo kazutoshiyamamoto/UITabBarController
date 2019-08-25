@@ -29,7 +29,7 @@ class SecondViewController: UIViewController, UISearchResultsUpdating {
         self.searchController.searchBar.sizeToFit()
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.hidesNavigationBarDuringPresentation = false
-
+        
         self.tableView.tableHeaderView = self.searchController.searchBar
         
         self.setUpTableItems()
@@ -76,6 +76,10 @@ extension SecondViewController: UITableViewDataSource {
     
     // セルの行数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        if searchController.isActive {
+            return self.searchResults.count
+        } else {
+            return self.items.count
+        }
     }
 }
