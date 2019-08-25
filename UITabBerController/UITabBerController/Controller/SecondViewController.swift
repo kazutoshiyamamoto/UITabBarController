@@ -93,8 +93,7 @@ extension SecondViewController: UISearchResultsUpdating {
         guard let searchText = self.searchController.searchBar.text else {
             return
         }
-        self.searchResults = self.items.filter({ $0.title.lowercased().contains(searchText.lowercased())
-        })
+        self.searchResults = self.items.filter({ $0.title.lowercased().contains(searchText.lowercased()) })
         self.tableView.reloadData()
     }
 }
