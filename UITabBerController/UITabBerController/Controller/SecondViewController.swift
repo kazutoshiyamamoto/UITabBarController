@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UISearchResultsUpdating {
+class SecondViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     // テーブルビューに表示するデータ
     private let sectionTitle = ["Section1"]
     private var items: [ListItem] = []
@@ -85,5 +85,16 @@ extension SecondViewController: UITableViewDataSource {
         } else {
             return self.items.count
         }
+    }
+}
+
+extension SecondViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = self.searchController.searchBar.text else {
+            return
+        }
+        self.searchResults = self.items.filter({ $0.title.lowercased().contains(searchText.lowercased())
+        })
+        self.tableView.reloadData()
     }
 }
