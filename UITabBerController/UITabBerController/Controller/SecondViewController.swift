@@ -23,6 +23,9 @@ class SecondViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        // スクロールするとキーボードを閉じる
+        self.tableView.keyboardDismissMode = .onDrag
+        
         self.searchController = UISearchController(searchResultsController: nil)
         self.searchController.searchResultsUpdater = self
         self.searchController.obscuresBackgroundDuringPresentation = false
