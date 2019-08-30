@@ -11,7 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     // テーブルビューに表示するデータ
     private var items: [ListItem] = []
     
@@ -35,6 +35,10 @@ class SecondViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func panPiece(_ sender: UIPanGestureRecognizer) {
+        self.searchController.isActive = false
     }
     
     private func setUpTableItems() {
